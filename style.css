@@ -1,0 +1,212 @@
+/* Critical local fallback: preserve navigation/modal states when Tailwind CDN is unavailable. */
+html body .hidden { display: none !important; }
+[hidden] { display: none !important; }
+/* The app must never render every SPA section as one long page when a remote stylesheet fails. */
+#main-content > .tab-content.hidden { display: none !important; }
+#main-content > .tab-content:not(.hidden) { display: block; }
+
+/* HỌC CÙNG PHÚC K9 — Motion & loading layer
+   Purposefully lightweight: transforms/opacity only, no animated background or continuous particle loops. */
+:root {
+  --pk9-paper: #f7f4eb;
+  --pk9-ink: #263a30;
+  --pk9-forest: #315b45;
+  --pk9-lavender: #eee7f7;
+  --pk9-mint: #e6f0e5;
+  --pk9-peach: #f9e6db;
+  --pk9-line: rgba(49, 91, 69, .14);
+}
+
+/* Initial loading: calming, readable and time-limited by site-effects.js. */
+#pk9-site-loader {
+  position: fixed; inset: 0; z-index: 2147483000;
+  display: grid; place-items: center; padding: 20px;
+  background: var(--pk9-paper); color: var(--pk9-ink);
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+#pk9-site-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.pk9-loader-card {
+  position: relative; display: flex; align-items: center; gap: 15px;
+  width: min(350px, 100%); padding: 20px 22px;
+  border: 1px solid var(--pk9-line); border-radius: 23px;
+  background: rgba(255,255,255,.84); box-shadow: 0 14px 34px rgba(49,91,69,.07);
+}
+.pk9-loader-book {
+  width: 52px; height: 56px; flex: 0 0 52px; position: relative;
+  display: grid; place-items: center; border-radius: 13px 16px 14px 10px;
+  color: #fff; background: var(--pk9-forest);
+  box-shadow: inset 4px 0 0 rgba(255,255,255,.15);
+  animation: pk9-book-breathe 1.5s ease-in-out infinite;
+}
+.pk9-loader-book b { font: 700 13px Georgia, serif; }
+.pk9-loader-book span { position: absolute; right: 4px; top: 2px; font-size: 12px; color: #f4d6a6; }
+.pk9-loader-copy { min-width: 0; flex: 1; }
+.pk9-loader-copy strong { display: block; font: 800 11px/1.35 "Segoe UI", Arial, sans-serif; letter-spacing: .08em; }
+.pk9-loader-copy > span { display: block; margin-top: 5px; color: #748075; font: 12px/1.5 "Segoe UI", Arial, sans-serif; }
+.pk9-loader-track { height: 4px; margin-top: 12px; overflow: hidden; border-radius: 999px; background: #e7e4da; }
+.pk9-loader-track i { display: block; width: 36%; height: 100%; border-radius: inherit; background: #8cae8c; animation: pk9-load-progress 1.1s ease-in-out infinite; }
+.pk9-loader-spark { position: absolute; top: 8px; right: 13px; color: #d7a866; font-size: 14px; }
+
+/* Route changes: short fade/raise. No filter or large-area blur. */
+.pk9-route-enter { animation: pk9-route-in .26s cubic-bezier(.2,.7,.25,1) both; }
+@keyframes pk9-route-in { from { opacity: .55; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pk9-book-breathe { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-2px) rotate(1deg); } }
+@keyframes pk9-load-progress { 0% { transform: translateX(-120%); } 100% { transform: translateX(310%); } }
+
+/* Tiny workbook/sticker details on the new Study Atelier home. These are static, not floating particles. */
+.sa-subject { position: relative; isolation: isolate; transition: transform .17s ease, border-color .17s ease, box-shadow .17s ease; }
+.sa-subject::after { position: absolute; right: 12px; top: 9px; z-index: -1; opacity: .14; font: 700 23px/1 Georgia, serif; transform: rotate(-9deg); pointer-events: none; }
+.sa-subject:nth-child(1)::after { content: "∑"; }
+.sa-subject:nth-child(2)::after { content: "Aa"; font-size: 18px; }
+.sa-subject:nth-child(3)::after { content: "⚛"; font-size: 19px; }
+.sa-subject:nth-child(4)::after { content: "⚗"; font-size: 19px; }
+.sa-card, .pk9-tool-card, .sa-mission { transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
+.sa-btn, .sa-resume-action, .pk9-tool-primary, .pk9-tool-quiet, .pk9-note-clear,
+.pk9-video-actions a, .pk9-video-search-cta { transition: background-color .16s ease, color .16s ease, border-color .16s ease, transform .12s ease, box-shadow .16s ease; }
+.sa-btn:active, .sa-resume-action:active, .pk9-tool-primary:active, .pk9-tool-quiet:active,
+.pk9-note-clear:active, .pk9-video-actions a:active, .pk9-video-search-cta:active { transform: translateY(1px) scale(.985); }
+@media (hover:hover) and (pointer:fine) {
+  .sa-subject:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(49,91,69,.07); }
+  .sa-card:hover, .pk9-tool-card:hover { border-color: rgba(49,91,69,.22); }
+  .sa-mission:hover { transform: translateX(2px); }
+}
+
+/* Reliable, visible fallback links for every lesson video. */
+.pk9-video-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pk9-video-actions a, .pk9-video-search-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 34px; padding: 8px 11px; border: 1px solid #d8e1d6; border-radius: 11px;
+  color: #315b45; background: #fbfcf8; text-decoration: none;
+  font: 700 11px/1.35 "Segoe UI", Arial, sans-serif;
+}
+.pk9-video-actions a:hover, .pk9-video-search-cta:hover { border-color: #91b29a; background: #edf5ec; }
+.pk9-science-video-meta { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 10px; padding: 11px 13px; color: #fff; background: #304b3b; font: 700 10px/1.45 "Segoe UI", Arial, sans-serif; }
+.pk9-science-video-meta > span { min-width: 0; overflow-wrap: anywhere; }
+.pk9-science-video-meta .pk9-video-actions a { min-height: 29px; padding: 6px 9px; color: #f7f4eb; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); font-size: 10px; }
+.pk9-science-video-meta .pk9-video-actions a:hover { background: rgba(255,255,255,.16); }
+.pk9-video-search-cta { margin-top: 13px; }
+#tab-courses #video-player, #tab-english #english-video-player, #tab-physics iframe, #tab-chemistry iframe,
+#tab-courses-2k11 iframe, #tab-grade10 iframe { display: block; width: 100%; max-width: 100%; aspect-ratio: 16/9; border: 0; }
+#tab-courses .aspect-video, #tab-english .aspect-video, #tab-physics .aspect-video, #tab-chemistry .aspect-video { width: 100%; overflow: hidden; }
+
+/* Don't let decorative motion become a performance cost on small screens. */
+@media (max-width: 640px) {
+  .pk9-loader-card { padding: 17px; border-radius: 19px; }
+  .pk9-science-video-meta { grid-template-columns: minmax(0,1fr); align-items: start; }
+  .pk9-video-actions { gap: 6px; }
+  .pk9-video-actions a { min-height: 36px; }
+  .sa-subject::after { right: 9px; top: 7px; font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #pk9-site-loader, .pk9-loader-book, .pk9-loader-track i, .pk9-route-enter,
+  .sa-subject, .sa-card, .pk9-tool-card, .sa-mission, .sa-btn, .sa-resume-action,
+  .pk9-tool-primary, .pk9-tool-quiet, .pk9-note-clear, .pk9-video-actions a, .pk9-video-search-cta {
+    animation: none !important; transition: none !important; scroll-behavior: auto !important;
+  }
+  .pk9-route-enter { opacity: 1; transform: none; }
+}
+
+.pk9-english-video-fallback{display:grid;justify-items:center;gap:9px;padding:28px 20px;background:#f3f6ee;border:1px solid #dce7d9;text-align:center;color:#2d4f3a;min-height:180px}
+.pk9-english-video-fallback[hidden]{display:none!important}
+.pk9-english-video-fallback strong{font:800 14px/1.4 "Segoe UI",Arial,sans-serif}
+.pk9-english-video-fallback p{max-width:420px;margin:0;color:#68786b;font:12px/1.6 "Segoe UI",Arial,sans-serif}
+.pk9-english-fallback-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#e6f0e5;color:#315b45;font:700 18px Georgia,serif}
+.pk9-english-video-fallback a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:9px 13px;border-radius:11px;background:#315b45;color:#fff;text-decoration:none;font:700 11px/1.4 "Segoe UI",Arial,sans-serif}
+
+/* PK9 source-backed study hub: restrained academic animation, distinct PC/mobile treatment. */
+#tab-home .sa-hero{position:relative;isolation:isolate}
+#tab-home .sa-hero:before,#tab-home .sa-hero:after{position:absolute;z-index:0;pointer-events:none;user-select:none;line-height:1}
+#tab-home .sa-hero:before{content:"✿";right:40%;top:10px;color:#c58a9e;font:700 34px/1 Georgia,serif;opacity:.32;transform:rotate(-14deg);animation:pk9-sticker-sway 7.5s ease-in-out infinite}
+#tab-home .sa-hero:after{content:"📚";right:15px;bottom:15px;font-size:28px;opacity:.74;transform:rotate(7deg);filter:none}
+#tab-home .sa-hero-copy,#tab-home .sa-hero-art{position:relative;z-index:1}
+#pk9-site-loader:after{content:"✿";position:absolute;transform:translate(142px,-70px) rotate(8deg);font:700 22px/1 Georgia,serif;color:#c58a9e;opacity:.65;pointer-events:none;animation:pk9-sticker-sway 7s ease-in-out infinite}
+@keyframes pk9-sticker-sway{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-3px) rotate(6deg)}}
+
+/* PDF bank: factual source cards only; no generated exam UI. */
+.pk9-sourcebank-shell,.pk9-2k8-course-shell{max-width:1180px;margin:0 auto;color:var(--sa-ink,#26382c)}
+.pk9-sourcebank-hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(22px,4vw,38px);border:1px solid #dedcc9;border-radius:26px;background:linear-gradient(128deg,#fffdf7 0%,#f2f3e8 68%,#e9f0e4 100%);box-shadow:0 14px 34px rgba(49,74,53,.07)}
+.pk9-sourcebank-kicker,.pk9-2k8-kicker{display:inline-flex;align-items:center;gap:7px;color:#527257;font:800 10px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.pk9-sourcebank-kicker:before,.pk9-2k8-kicker:before{content:"";display:inline-block;width:8px;height:8px;border-radius:3px;background:#91b38c;transform:rotate(18deg)}
+.pk9-sourcebank-hero h1,.pk9-2k8-head h1{max-width:760px;margin:12px 0 10px;color:#283b2e;font:600 clamp(28px,4vw,43px)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.035em}
+.pk9-sourcebank-hero p,.pk9-2k8-copy>p{max-width:800px;margin:0;color:#697568;font:400 13px/1.8 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-sourcebank-hero b{color:#365a40}
+.pk9-sourcebank-flower{position:absolute;right:29px;top:17px;color:#c78ea1;font:700 60px/1 Georgia,serif;opacity:.42;pointer-events:none;animation:pk9-sticker-sway 8s ease-in-out infinite}
+.pk9-sourcebank-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:19px}
+.pk9-sourcebank-stats span,.pk9-2k8-badges span{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:6px 10px;border:1px solid #e2e3d7;border-radius:99px;background:rgba(255,255,255,.72);color:#596e5a;font:700 10px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-sourcebank-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:19px 0 13px}
+.pk9-sourcebank-search{display:flex;align-items:center;gap:9px;min-height:43px;flex:1 1 270px;max-width:470px;padding:0 13px;border:1px solid #deded1;border-radius:13px;background:#fffdf7;color:#71806f}
+.pk9-sourcebank-search span{font:25px/1 system-ui,sans-serif}
+.pk9-sourcebank-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#2b3c30;font:500 12px/1.45 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-sourcebank-filter{display:flex;gap:5px;padding:4px;border:1px solid #e4e0d4;border-radius:13px;background:#f7f3e9}
+.pk9-sourcebank-filter button{min-height:33px;padding:0 12px;border:1px solid transparent;border-radius:9px;background:transparent;color:#687567;font:750 10px/1.2 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-sourcebank-filter button.is-active{border-color:#3b6045;background:#3b6045;color:#fffdf7}
+.pk9-sourcebank-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pk9-source-exam-card{display:flex;flex-direction:column;min-width:0;padding:19px;border:1px solid #e4dfd1;border-radius:20px;background:#fffdf7;box-shadow:0 8px 24px rgba(52,67,48,.045);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.pk9-source-exam-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pk9-source-file-icon{display:grid;place-items:center;width:44px;height:44px;border:1px solid transparent;border-radius:14px;font:700 18px Georgia,serif}
+.pk9-source-file-math{background:#eee7f6;border-color:#e1d6ee;color:#775b88}
+.pk9-source-file-bio{background:#e5efdf;border-color:#d6e4ce;color:#426d4c;font:800 11px system-ui,Arial,sans-serif}
+.pk9-source-tag{padding:6px 8px;border:1px solid #e7e2d5;border-radius:99px;background:#f9f5eb;color:#7b755f;font:800 9px/1.2 system-ui,Arial,sans-serif;letter-spacing:.05em}
+.pk9-source-subject{margin-top:19px;color:#75806e;font:800 9px/1.4 system-ui,Arial,sans-serif;letter-spacing:.14em}
+.pk9-source-exam-card h2{margin:7px 0 8px;color:#2c3e31;font:600 clamp(19px,2vw,23px)/1.22 Georgia,"Times New Roman",serif;letter-spacing:-.018em}
+.pk9-source-exam-card p{margin:0;color:#74796d;font:400 11.5px/1.7 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-source-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;margin-top:15px;padding-top:12px;border-top:1px dashed #e6e0d3;color:#6e7969;font:700 9.5px/1.35 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-source-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.pk9-source-actions a{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:37px;padding:8px 11px;border:1px solid #dfdfd2;border-radius:10px;text-decoration:none;font:800 10px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;transition:background-color .16s ease,color .16s ease,border-color .16s ease,transform .12s ease}
+.pk9-source-actions a:active{transform:translateY(1px)}
+.pk9-source-primary{background:#365b41;border-color:#365b41!important;color:#fffdf7}
+.pk9-source-secondary{background:#eff3e9;color:#426748}
+.pk9-source-origin{width:100%;justify-content:flex-start!important;min-height:31px!important;padding:5px 1px!important;border-color:transparent!important;background:transparent!important;color:#667a65}
+.pk9-sourcebank-empty{padding:22px;border:1px dashed #d8d8c8;border-radius:16px;background:#fffdf7;text-align:center;color:#7b806f;font-size:12px}
+.pk9-sourcebank-honesty{display:flex;align-items:flex-start;gap:12px;margin-top:16px;padding:16px;border:1px solid #e8dfc6;border-radius:16px;background:#fcf6e8;color:#645d4a}
+.pk9-sourcebank-honesty>span{font-size:20px}
+.pk9-sourcebank-honesty strong{display:block;color:#5d563f;font:800 12px/1.4 system-ui,Arial,sans-serif}
+.pk9-sourcebank-honesty p{margin:4px 0 0;color:#77705b;font:400 11px/1.65 system-ui,Arial,sans-serif}
+
+/* 2K8 courses: one reliable source link and an explicitly lazy optional embed. */
+.pk9-2k8-course-shell{overflow:hidden;border:1px solid #e1ddce;border-radius:26px;background:#fffdf7;box-shadow:0 14px 34px rgba(49,74,53,.06)}
+.pk9-2k8-kicker{margin:23px 24px 0}
+.pk9-2k8-head{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(190px,.7fr);align-items:center;gap:28px;padding:14px 25px 28px}
+.pk9-2k8-copy{min-width:0}
+.pk9-2k8-sticker{display:inline-flex;margin-top:8px;padding:7px 10px;border:1px dashed #dfc1ce;border-radius:10px;background:#fbf0f3;color:#9a6d80;transform:rotate(-1.5deg);font-size:17px}
+.pk9-2k8-badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.pk9-2k8-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}
+.pk9-2k8-actions a,.pk9-2k8-actions button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 14px;border:1px solid #dcded0;border-radius:12px;text-decoration:none;font:800 11px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;transition:transform .12s ease,background-color .16s ease}
+.pk9-2k8-actions a:active,.pk9-2k8-actions button:active{transform:translateY(1px)}
+.pk9-2k8-primary{background:#365b41;color:#fffdf7;border-color:#365b41!important}
+.pk9-2k8-secondary{background:#f5f0e5;color:#53634f}
+.pk9-2k8-help{margin-top:12px!important;font-size:10.5px!important;color:#8b887b!important}
+.pk9-2k8-illustration{position:relative;display:grid;place-items:center;min-height:230px;isolation:isolate}
+.pk9-book-stack{position:relative;display:flex;flex-direction:column;justify-content:center;width:175px;height:132px;padding:16px;border:1px solid #d4c3a3;border-radius:12px 16px 13px 8px;background:#eee2c8;box-shadow:5px 7px 0 #d7c29f,10px 12px 0 #e9dfc9,0 18px 30px rgba(55,71,46,.1);transform:rotate(-4deg);color:#4f674c}
+.pk9-book-stack:before{content:"";position:absolute;left:12px;top:10px;bottom:10px;width:4px;border-radius:99px;background:#d4a4b6}
+.pk9-book-stack span{font:700 31px/1 Georgia,serif}
+.pk9-book-stack b{margin-top:9px;font:800 9px/1.3 system-ui,Arial,sans-serif;letter-spacing:.16em}
+.pk9-book-stack i{position:absolute;right:14px;top:13px;font:normal 24px/1 Georgia,serif;color:#c5869d}
+.pk9-orbit{position:absolute;display:grid;place-items:center;width:38px;height:38px;border:1px solid #e0d9c8;border-radius:13px;background:#fffdf7;box-shadow:0 5px 14px rgba(65,76,54,.07);font:700 16px Georgia,serif;animation:pk9-sticker-sway 7s ease-in-out infinite}
+.pk9-orbit-a{top:24px;right:16% ;color:#7c618e;transform:rotate(7deg)}
+.pk9-orbit-b{bottom:28px;left:7%;color:#54764f;animation-delay:-2s}
+.pk9-orbit-c{top:45%;right:3%;color:#b2765b;animation-delay:-4s}
+.pk9-2k8-frame-wrap{margin:0 22px 20px;border:1px solid #dedfd1;border-radius:16px;overflow:hidden;background:#f8f5ec}
+.pk9-2k8-frame-wrap[hidden],.pk9-2k8-frame-wrap.hidden{display:none!important}
+.pk9-2k8-frame-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px;color:#5d6d58;font:750 10px/1.4 system-ui,Arial,sans-serif}
+.pk9-2k8-frame-toolbar a{color:#365b41;text-decoration:none}
+#pk9-2k8-frame{display:block;width:100%;height:min(74vh,760px);border:0;background:#fff}
+.pk9-2k8-footnote{margin:0 22px 22px;padding:13px 15px;border-left:3px solid #c7d5be;background:#f3f4e9;color:#6c7565;font:400 10.5px/1.7 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-2k8-footnote strong{color:#426047}
+
+@media (hover:hover) and (pointer:fine){.pk9-source-exam-card:hover{transform:translateY(-2px);border-color:#cfd9c8;box-shadow:0 13px 29px rgba(49,74,53,.08)}.pk9-source-primary:hover{background:#2d4b36}.pk9-source-secondary:hover,.pk9-2k8-secondary:hover{background:#e9eee3}.pk9-2k8-primary:hover{background:#2d4b36}}
+@media(max-width:780px){#tab-home .sa-hero:before{right:12%;top:4px;font-size:25px;opacity:.23}#tab-home .sa-hero:after{right:8px;bottom:8px;font-size:21px;opacity:.55}.pk9-sourcebank-grid{grid-template-columns:minmax(0,1fr)}.pk9-sourcebank-hero{border-radius:20px}.pk9-source-exam-card{padding:17px}.pk9-2k8-head{grid-template-columns:minmax(0,1fr);padding:12px 19px 21px;gap:12px}.pk9-2k8-kicker{margin:20px 19px 0}.pk9-2k8-illustration{min-height:170px}.pk9-book-stack{width:148px;height:112px}.pk9-orbit-a{right:19%}.pk9-orbit-b{left:17%}.pk9-orbit-c{right:14%}.pk9-2k8-frame-wrap{margin:0 14px 14px}.pk9-2k8-footnote{margin:0 14px 14px}.pk9-sourcebank-flower{right:17px;top:14px;font-size:39px}}
+@media(max-width:420px){.pk9-sourcebank-filter{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.pk9-sourcebank-filter button{padding:0 8px}.pk9-source-actions a{font-size:9px;padding:8px 9px}.pk9-2k8-actions{display:grid;grid-template-columns:minmax(0,1fr)}.pk9-2k8-actions a,.pk9-2k8-actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){#tab-home .sa-hero:before,#pk9-site-loader:after,.pk9-sourcebank-flower,.pk9-orbit{animation:none!important}.pk9-source-exam-card,.pk9-source-actions a,.pk9-2k8-actions a,.pk9-2k8-actions button{transition:none!important}}
+
+/* Ensure source-hub filters hide cards consistently across browsers. */
+.pk9-source-exam-card[hidden], .pk9-sourcebank-empty.hidden { display: none !important; }
+
+/* Safe in-page explanation for the 2K8 source link; never embed raw htmlview output. */
+.pk9-2k8-embed-fallback{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:start;gap:15px;padding:18px 20px 22px;background:#fffdf7;border-top:1px solid #e5e1d4}
+.pk9-2k8-embed-icon{display:grid;place-items:center;width:58px;height:58px;border:1px solid #e4decf;border-radius:16px;background:#f1eee3;font-size:26px}
+.pk9-2k8-embed-fallback strong{display:block;color:#293c2e;font:700 14px/1.4 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-2k8-embed-fallback p{max-width:680px;margin:6px 0 12px;color:#74796c;font:400 12px/1.7 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.pk9-2k8-frame-toolbar button{padding:6px 10px;border:1px solid #deded1;border-radius:9px;background:#fffdf7;color:#596e5a;font-size:11px;font-weight:700;cursor:pointer}
+@media(max-width:520px){.pk9-2k8-embed-fallback{grid-template-columns:1fr;padding:15px}.pk9-2k8-embed-icon{width:46px;height:46px}}

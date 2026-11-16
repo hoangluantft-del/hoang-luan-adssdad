@@ -1,0 +1,6 @@
+{
+  "name": "Học Cùng Luân K9",
+  "description": "Hệ thống học tập và luyện thi THPT, ĐGNL 9+ chuẩn GDPT mới cùng thầy Luân K9 với bài giảng, phân dạng, kho đề và tài liệu PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

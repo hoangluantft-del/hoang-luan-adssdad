@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="vi" class="w-full overflow-x-clip scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Năng Lực (ĐGNL) - Hoàng Luân</title> 
+  <meta name="description" content="Hệ thống Luyện Thi Đánh Giá Năng Lực HSA, V-ACT & TSA hàng đầu cùng Thầy Hoàng Luân. Tận tâm dẫn lối - Chuyên cần bứt phá."/>
+  <meta property="og:title" content=" HOÀNG LUÂN | Luyện thi Đánh Giá Năng Lực ĐHQG Hà Nội & TP.HCM"/>
+  <meta property="og:description" content="Lộ trình ôn thi ĐGNL HSA, V-ACT, TSA bám sát ma trận mới nhất. Thi thử trực tuyến miễn phí, phân tích phổ điểm theo mô hình IRT 3PL."/>
+  <meta property="og:image" content="/assets/empire/empire-hero-banner.jpg"/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#0f2a5c"/>
+  <link rel="icon" type="image/jpeg" href="/assets/hoang-luan-avatar.jpg"/>
+  <link rel="apple-touch-icon" href="/assets/hoang-luan-avatar.jpg"/>
+
+  <!-- Google Fonts & FontAwesome -->vvvvmm
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            'home-ink': '#171717',
+            'home-navy': '#0f2a5c',
+            'home-navy-light': '#1a3a6e',
+            'exam-hsa': {
+              50: '#eef6ff',
+              100: '#dbeafe',
+              500: '#1e69f3',
+              600: '#1254cb',
+            },
+            'exam-vact': {
+              50: '#fef5e7',
+              100: '#fde7c4',
+              500: '#f99d0d',
+              600: '#d98104',
+            },
+            'exam-tsa': {
+              50: '#fef2f2',
+              500: '#ef4444',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 32s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: #ffffff;
+      color: #171717;
+    }
+    input, textarea, select {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-[#171717] antialiased">
+
+  <!-- 1. TOP ANNOUNCEMENT BANNER -->
+  <div class="relative overflow-hidden bg-[linear-gradient(90deg,#0f2a5c_0%,#1a3a6e_50%,#f99d0d_100%)] text-white text-xs md:text-sm font-medium py-2.5 px-4 shadow-sm">
+    <div class="max-w-[1240px] mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2 truncate">
+        <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-white/20 text-[11px] font-bold tracking-wide uppercase">Tuyển sinh 2026 - 2027</span>
+        <span class="truncate">🎉 Khai giảng khóa mới · Đồng hành ôn thi ĐGNL HSA, V-ACT & TSA cùng các Thầy Quang Anh , Luân , Kiệt , Kỳ ,THịnh,Dũng !</span>
+      </div>
+      <a href="#courses" class="shrink-0 font-semibold underline underline-offset-4 hover:text-amber-200 transition-colors flex items-center gap-1">
+        Xem ưu đãi 200 suất <i class="fa-solid fa-arrow-right text-[11px]"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. STICKY HEADER NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e5e5e5] transition-all duration-200">
+    <div class="max-w-[1240px] mx-auto px-4 h-18 flex items-center justify-between gap-4">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative size-11 rounded-full overflow-hidden border-2 border-[#f99d0d] shadow-sm shrink-0">
+          <img src="/assets/hoang-luan-avatar.jpg" alt="Hoàng Luân" class="size-full object-cover group-hover:scale-105 transition-transform" onerror="this.src='/assets/phuc-k9-fallback-teacher.jpg'"/>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg md:text-xl font-extrabold tracking-tight text-[#0f2a5c] group-hover:text-[#f99d0d] transition-colors leading-tight flex items-center gap-1.5">
+            HỌC CÙNG HL Team
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-bold tracking-normal uppercase">ĐGNL</span>
+          </span>
+          <span class="text-[11px] text-[#737373] font-medium tracking-wide">Hệ thống Luyện thi Đánh Giá Năng Lực 2K9</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-[#404040]">
+        <a href="#" class="text-[#171717] hover:text-[#f99d0d] transition-colors">Trang chủ</a>
+        <a href="#courses" class="hover:text-[#f99d0d] transition-colors">Khóa học 2K9</a>
+        <a href="#exam-section" class="hover:text-[#f99d0d] transition-colors flex items-center gap-1.5">
+          <span class="size-2 rounded-full bg-red-500 animate-pulse"></span>
+          Thi thử ĐGNL
+        </a>
+        <a href="#articles" class="hover:text-[#f99d0d] transition-colors">Cẩm nang IRT</a>
+        <a href="#teacher" class="hover:text-[#f99d0d] transition-colors">Thầy Hoàng Luân</a>
+        <a href="/kho-bai-giang" class="hover:text-[#f99d0d] transition-colors flex items-center gap-1 text-[#0f2a5c]">
+          <i class="fa-solid fa-book-open text-xs text-[#f99d0d]"></i> Kho đề & PDF
+        </a>
+      </nav>
+
+      <!-- Right CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://zalo.me/0372356269" target="_blank" class="flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#e5e5e5] text-xs font-semibold text-[#171717] hover:bg-slate-50 transition-colors shadow-sm">
+          <span class="size-2 rounded-full bg-emerald-500"></span>
+          <span>Zalo: <b class="text-[#0f2a5c]">0372 356 269</b></span>
+        </a>
+        <button onclick="openCBTModal('vact')" class="h-10 px-4 rounded-full border border-[#171717] text-xs font-bold text-[#171717] hover:bg-[#171717] hover:text-white transition-all">
+          Thi thử ngay
+        </button>
+        <a href="#register" class="h-10 px-5 rounded-full bg-[#f99d0d] hover:bg-[#e08905] text-white text-xs font-bold transition-all shadow-md shadow-orange-500/20 flex items-center justify-center">
+          Đăng ký tư vấn
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl text-[#171717] hover:bg-slate-100 transition-colors" aria-label="Menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden border-t border-[#e5e5e5] bg-white px-5 py-5 space-y-3.5 shadow-xl">
+      <a href="#" onclick="toggleMobileNav()" class="block text-sm font-semibold text-[#171717]">Trang chủ</a>
+      <a href="#courses" onclick="toggleMobileNav()" class="block text-sm font-semibold text-[#404040]">Khóa học ĐGNL 2K9</a>
+      <a href="#exam-section" onclick="toggleMobileNav()" class="block text-sm font-semibold text-red-600 font-bold">Thi thử ĐGNL Online</a>
+      <a href="#articles" onclick="toggleMobileNav()" class="block text-sm font-semibold text-[#404040]">Cẩm nang & Phổ điểm IRT</a>
+      <a href="#teacher" onclick="toggleMobileNav()" class="block text-sm font-semibold text-[#404040]">Thầy Hoàng Luân</a>
+      <a href="/kho-bai-giang" class="block text-sm font-semibold text-[#0f2a5c]">Kho bài giảng & Đề thi gốc</a>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
+        <button onclick="openCBTModal('vact'); toggleMobileNav();" class="w-full py-2.5 rounded-full border border-[#171717] text-xs font-bold text-[#171717]">
+          Thi thử trực tuyến
+        </button>
+        <a href="#register" onclick="toggleMobileNav()" class="w-full py-2.5 rounded-full bg-[#f99d0d] text-white text-xs font-bold text-center">
+          Đăng ký tư vấn lộ trình
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. NEWS TICKER MARQUEE -->
+  <section class="bg-[#fafafa] border-b border-[#e5e5e5] py-2.5 px-4 overflow-hidden">
+    <div class="max-w-[1240px] mx-auto flex items-center gap-3">
+      <div class="shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-red-500 text-white text-xs font-extrabold tracking-wide uppercase shadow-sm">
+        <i class="fa-solid fa-bolt text-[10px]"></i>
+        <span>Tin tức</span>
+      </div>
+      <div class="overflow-hidden relative w-full flex-1">
+        <div class="animate-marquee items-center gap-10 text-xs md:text-sm font-medium text-[#171717]">
+          <span class="hover:text-[#f99d0d] cursor-pointer inline-flex items-center gap-2" onclick="openArticle(1)">
+            <b>Lịch thi đánh giá năng lực (ĐGLN V-ACT) ĐH Quốc gia TP.HCM 2027 (Dự kiến)</b>
+            <span class="text-[#737373]">· 03/11/2026</span>
+          </span>
+          <span class="text-[#cbd5e1]">✦</span>
+          <span class="hover:text-[#f99d0d] cursor-pointer inline-flex items-center gap-2" onclick="openArticle(2)">
+            <b>Tham số a, b, c trong mô hình IRT 3PL giúp đọc chất lượng câu hỏi ĐGNL</b>
+            <span class="text-[#737373]">· 30/10/2026</span>
+          </span>
+          <span class="text-[#cbd5e1]">✦</span>
+          <span class="hover:text-[#f99d0d] cursor-pointer inline-flex items-center gap-2" onclick="openArticle(3)">
+            <b>Theta âm trong thang đo IRT có đồng nghĩa với học sinh yếu hay không?</b>
+            <span class="text-[#737373]">· 30/10/2026</span>
+          </span>
+          <span class="text-[#cbd5e1]">✦</span>
+          <span class="hover:text-[#f99d0d] cursor-pointer inline-flex items-center gap-2" onclick="openArticle(1)">
+            <b>Luyện thi HSA 2027: Chọn Khoa học hay Tiếng Anh để không mất cơ hội xét tuyển?</b>
+            <span class="text-[#737373]">· 30/10/2026</span>
+          </span>
+          <span class="text-[#cbd5e1]">✦</span>
+          <span class="hover:text-[#f99d0d] cursor-pointer inline-flex items-center gap-2" onclick="openArticle(2)">
+            <b>Lộ trình luyện thi ĐGNL 2027 cùng Thầy Hoàng Luân: 96 giờ bứt phá 900+ V-ACT & 100+ HSA</b>
+            <span class="text-[#737373]">· 28/10/2026</span>
+          </span>
+        </div>
+      </div>
+      <a href="#articles" class="shrink-0 text-xs font-bold text-[#1e69f3] hover:underline flex items-center gap-1 hidden sm:flex">
+        Xem thêm <i class="fa-solid fa-angle-right text-[10px]"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. HERO SECTION (EMPIRE SIGNATURE DESIGN) -->
+  <section class="relative bg-[linear-gradient(180deg,#ffffff_0%,#fef9f0_100%)] pt-8 pb-14 md:pt-14 md:pb-20 border-b border-[#e5e5e5] overflow-hidden">
+    <div class="absolute -top-16 -right-16 size-[320px] rounded-full bg-amber-200/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -left-20 size-[320px] rounded-full bg-blue-100/40 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1240px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 flex flex-col gap-6 text-left">
+        
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#e5e5e5] shadow-sm w-fit">
+          <span class="size-2 rounded-full bg-[#f99d0d]"></span>
+          <span class="text-xs md:text-sm font-bold text-[#171717] tracking-tight">HỆ THỐNG LUYỆN THI ĐÁNH GIÁ NĂNG LỰC HÀNG ĐẦU</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-[#171717] leading-[1.18] tracking-tight">
+          Luyện thi Đánh Giá Năng Lực cùng <span class="text-[#0f2a5c] relative inline-block">
+            HOÀNG LUÂN
+            <svg class="absolute left-0 -bottom-1.5 w-full h-2 text-[#f99d0d]" viewBox="0 0 100 12" preserveAspectRatio="none">
+              <path d="M0,5 Q50,12 100,5" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+
+        <div class="space-y-2">
+          <p class="text-lg md:text-xl font-bold text-[#f99d0d] tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap"></i> Tận tâm dẫn lối - Chuyên cần bứt phá
+          </p>
+          <p class="text-sm md:text-base text-[#525252] leading-relaxed max-w-xl">
+            Tự tin bước vào kỳ thi <b>HSA (ĐHQG Hà Nội)</b>, <b>V-ACT (ĐHQG TP.HCM)</b> & <b>TSA (Bách Khoa)</b> với lộ trình rõ ràng, luyện đề thực chiến chuẩn cấu trúc ma trận mới nhất và thầy Hoàng Luân luôn đồng hành giải đáp 24/7.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-3.5 pt-2">
+          <a href="#register" class="h-12 px-8 rounded-full bg-[#f99d0d] hover:bg-[#e08905] text-white font-bold text-sm md:text-base transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2 group">
+            <span>Đăng ký ngay</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform text-xs"></i>
+          </a>
+          <a href="#courses" class="h-12 px-7 rounded-full bg-[#171717] hover:bg-[#0f2a5c] text-white font-semibold text-sm md:text-base transition-all flex items-center justify-center">
+            Xem lộ trình & khóa học
+          </a>
+          <button onclick="openCBTModal('vact')" class="h-12 px-6 rounded-full border-[1.5px] border-[#0f2a5c] bg-white text-[#0f2a5c] hover:bg-slate-50 font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 shadow-sm">
+            <i class="fa-solid fa-play text-xs text-[#f99d0d]"></i>
+            <span>Thi thử miễn phí</span>
+          </button>
+        </div>
+
+        <!-- Social Proof Stats -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[#e5e5e5]">
+          <div class="flex flex-col">
+            <span class="text-2xl md:text-3xl font-extrabold text-[#0f2a5c]">50.000+</span>
+            <span class="text-xs text-[#737373] font-medium">Học viên đã học</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl md:text-3xl font-extrabold text-[#f99d0d]">98.6%</span>
+            <span class="text-xs text-[#737373] font-medium">Đỗ nguyện vọng 1</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl md:text-3xl font-extrabold text-[#1e69f3]">1.500+</span>
+            <span class="text-xs text-[#737373] font-medium">Đề thi chuẩn cấu trúc</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl md:text-3xl font-extrabold text-emerald-600">4.9/5★</span>
+            <span class="text-xs text-[#737373] font-medium">Học viên hài lòng</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-[#e5e5e5] bg-white p-2.5 shadow-[0px_10px_35px_0px_rgba(15,42,92,0.1)]">
+          <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-hero-banner.jpg" alt="Hệ thống Luyện thi ĐGNL Hoàng Luân" class="size-full object-cover" onerror="this.src='/assets/hoang-luan-avatar.jpg'"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#f99d0d] text-[11px] font-bold uppercase tracking-wide">
+                Phòng Học Live & CBT 2026 - 2027
+              </div>
+              <p class="text-base font-bold mt-1 text-white">Chinh phục 100+ HSA & 900+ V-ACT</p>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="absolute -bottom-4 -left-3 bg-white border border-[#e5e5e5] rounded-2xl p-3 shadow-lg flex items-center gap-3">
+            <img src="/assets/hoang-luan-avatar.jpg" alt="Thầy Hoàng Luân" class="size-11 rounded-full object-cover border-2 border-[#f99d0d]" onerror="this.src='/assets/phuc-k9-fallback-teacher.jpg'"/>
+            <div>
+              <p class="text-xs font-bold text-[#171717]">Thầy Hoàng Luân</p>
+              <p class="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
+                <span class="size-2 rounded-full bg-emerald-500 animate-ping"></span> Trực tiếp giảng dạy & hỗ trợ
+              </p>
+            </div>
+          </div>
+
+          <div class="absolute -top-3 -right-3 bg-[#0f2a5c] text-white rounded-2xl px-4 py-2 shadow-lg text-right hidden sm:block">
+            <p class="text-[10px] text-amber-300 font-bold uppercase tracking-wider">Mục tiêu chuẩn</p>
+            <p class="text-sm font-extrabold">Top 1% Điểm số cả nước</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. CHỌN KỲ THI – CHỌN LỘ TRÌNH (COURSE CATALOG WITH TABS) -->
+  <section id="courses" class="py-14 md:py-20 bg-white">
+    <div class="max-w-[1240px] mx-auto px-4">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-[#f99d0d] bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200/60">
+          Lộ trình tinh gọn & thực chiến
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#171717] tracking-tight">
+          Chọn kỳ thi – Chọn lộ trình cùng Hoàng Luân
+        </h2>
+        <p class="text-sm text-[#525252]">
+          Chương trình được thiết kế bài bản theo đúng cấu trúc đề thi ĐGNL mới nhất. Học lý thuyết trọng tâm, luyện đề bấm giờ và sửa chi tiết từng câu.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <button onclick="filterCourse('all')" id="tab-all" class="course-tab-btn active px-5 py-2.5 rounded-full text-xs md:text-sm font-bold bg-[#171717] text-white transition-all shadow-sm">
+          Tất cả (6)
+        </button>
+        <button onclick="filterCourse('hsa')" id="tab-hsa" class="course-tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold bg-slate-100 text-[#404040] hover:bg-slate-200 transition-all">
+          HSA · ĐHQG Hà Nội
+        </button>
+        <button onclick="filterCourse('vact')" id="tab-vact" class="course-tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold bg-slate-100 text-[#404040] hover:bg-slate-200 transition-all">
+          V-ACT · ĐHQG TP.HCM
+        </button>
+        <button onclick="filterCourse('tsa')" id="tab-tsa" class="course-tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold bg-slate-100 text-[#404040] hover:bg-slate-200 transition-all">
+          TSA · ĐH Bách Khoa
+        </button>
+        <button onclick="filterCourse('thpt')" id="tab-thpt" class="course-tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold bg-slate-100 text-[#404040] hover:bg-slate-200 transition-all">
+          THPT Quốc Gia 9+
+        </button>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="courses-grid">
+        
+        <!-- Course 1: HSA English -->
+        <div class="course-card course-hsa rounded-2xl border border-[#e5e5e5] bg-white overflow-hidden shadow-[0px_6px_18px_0px_rgba(23,23,23,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-hsa-english.webp" alt="Khóa học HSA Tiếng Anh 2K9" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-[#1e69f3] text-white text-[11px] font-bold uppercase tracking-wider">
+              HSA · ĐHQG Hà Nội
+            </span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-amber-500 text-white text-[11px] font-bold">
+              Ưu đãi 50%
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-[#1e69f3] transition-colors leading-snug line-clamp-2">
+                KHÓA HỌC ĐGNL HSA 2K9 (TIẾNG ANH) - KHÓA 1
+              </h3>
+              <p class="text-xs text-[#737373] mt-2 line-clamp-2">
+                Chuyên sâu phân dạng câu hỏi ngữ pháp, đọc hiểu tư duy và từ vựng trọng tâm trong đề thi HSA ĐHQG Hà Nội.
+              </p>
+              <div class="flex items-center gap-4 text-xs text-[#525252] mt-3 pt-3 border-t border-slate-100">
+                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i> 45 Buổi live</span>
+                <span><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> 60 Đề thi chuẩn</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <div>
+                <span class="text-xs text-[#737373] line-through">1.800.000đ</span>
+                <p class="text-lg font-extrabold text-[#f99d0d]">899.000đ</p>
+              </div>
+              <button onclick="openEnrollModal('KHÓA HỌC ĐGNL HSA 2K9 (TIẾNG ANH)', '899.000đ')" class="px-4 py-2 rounded-full bg-[#0f2a5c] hover:bg-[#1e69f3] text-white text-xs font-bold transition-colors">
+                Đăng ký ngay
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2: V-ACT Course 1 -->
+        <div class="course-card course-vact rounded-2xl border border-[#e5e5e5] bg-white overflow-hidden shadow-[0px_6px_18px_0px_rgba(23,23,23,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-vact-course1.webp" alt="Khóa học V-ACT 2K9 Khóa 1" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-[#f99d0d] text-white text-[11px] font-bold uppercase tracking-wider">
+              V-ACT · ĐHQG TP.HCM
+            </span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-red-500 text-white text-[11px] font-bold">
+              Hot nhất
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-[#f99d0d] transition-colors leading-snug line-clamp-2">
+                KHÓA HỌC ĐGNL V-ACT 2K9 - KHÓA 1 (TOÀN DIỆN)
+              </h3>
+              <p class="text-xs text-[#737373] mt-2 line-clamp-2">
+                Lộ trình toàn diện Toán học, Tư duy logic, Phân tích số liệu và Ngôn ngữ nhằm mục tiêu 900+ điểm V-ACT.
+              </p>
+              <div class="flex items-center gap-4 text-xs text-[#525252] mt-3 pt-3 border-t border-slate-100">
+                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i> 60 Buổi học</span>
+                <span><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> 100+ Đề CBT</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <div>
+                <span class="text-xs text-[#737373] line-through">2.100.000đ</span>
+                <p class="text-lg font-extrabold text-[#f99d0d]">990.000đ</p>
+              </div>
+              <button onclick="openEnrollModal('KHÓA HỌC ĐGNL V-ACT 2K9 - KHÓA 1', '990.000đ')" class="px-4 py-2 rounded-full bg-[#f99d0d] hover:bg-[#e08905] text-white text-xs font-bold transition-colors">
+                Đăng ký ngay
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3: HSA Science -->
+        <div class="course-card course-hsa rounded-2xl border border-[#e5e5e5] bg-white overflow-hidden shadow-[0px_6px_18px_0px_rgba(23,23,23,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-hsa-science.webp" alt="Khóa học HSA Tư duy khoa học" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-[#1e69f3] text-white text-[11px] font-bold uppercase tracking-wider">
+              HSA · Khoa Học
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-[#1e69f3] transition-colors leading-snug line-clamp-2">
+                KHÓA HỌC ĐGNL HSA 2K9 (TƯ DUY KHOA HỌC) - KHÓA 1
+              </h3>
+              <p class="text-xs text-[#737373] mt-2 line-clamp-2">
+                Ôn luyện trọng tâm phần Khoa học Tự nhiên và Xã hội (Lý, Hóa, Sinh, Sử, Địa) chuẩn cấu trúc định dạng mới.
+              </p>
+              <div class="flex items-center gap-4 text-xs text-[#525252] mt-3 pt-3 border-t border-slate-100">
+                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i> 50 Buổi chuyên sâu</span>
+                <span><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> 80 Đề luyện tập</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <div>
+                <span class="text-xs text-[#737373] line-through">1.800.000đ</span>
+                <p class="text-lg font-extrabold text-[#f99d0d]">899.000đ</p>
+              </div>
+              <button onclick="openEnrollModal('KHÓA HỌC ĐGNL HSA 2K9 (KHOA HỌC)', '899.000đ')" class="px-4 py-2 rounded-full bg-[#0f2a5c] hover:bg-[#1e69f3] text-white text-xs font-bold transition-colors">
+                Đăng ký ngay
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4: V-ACT Speedup -->
+        <div class="course-card course-vact rounded-2xl border border-[#e5e5e5] bg-white overflow-hidden shadow-[0px_6px_18px_0px_rgba(23,23,23,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-vact-speedup.webp" alt="Khóa học V-ACT Cấp Tốc" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-red-600 text-white text-[11px] font-bold uppercase tracking-wider">
+              V-ACT Cấp Tốc
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-red-600 transition-colors leading-snug line-clamp-2">
+                KHÓA HỌC ĐGNL V-ACT 2K9 - KHÓA CẤP TỐC 30 NGÀY
+              </h3>
+              <p class="text-xs text-[#737373] mt-2 line-clamp-2">
+                Khóa bứt phá cấp tốc dành cho sĩ tử muốn tăng 150 - 250 điểm trong tháng cuối cùng. Luyện đề thực chiến 120 phút.
+              </p>
+              <div class="flex items-center gap-4 text-xs text-[#525252] mt-3 pt-3 border-t border-slate-100">
+                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i> 30 Buổi thực chiến</span>
+                <span><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> 50 Đề bấm giờ</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <div>
+                <span class="text-xs text-[#737373] line-through">1.600.000đ</span>
+                <p class="text-lg font-extrabold text-[#f99d0d]">799.000đ</p>
+              </div>
+              <button onclick="openEnrollModal('KHÓA HỌC ĐGNL V-ACT CẤP TỐC', '799.000đ')" class="px-4 py-2 rounded-full bg-[#0f2a5c] hover:bg-red-600 text-white text-xs font-bold transition-colors">
+                Đăng ký ngay
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5: TSA Bách Khoa -->
+        <div class="course-card course-tsa rounded-2xl border border-[#e5e5e5] bg-white overflow-hidden shadow-[0px_6px_18px_0px_rgba(23,23,23,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-news-schedule.jpg" alt="Khóa học TSA Bách Khoa" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-[#dc2626] text-white text-[11px] font-bold uppercase tracking-wider">
+              TSA · ĐH Bách Khoa
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-red-600 transition-colors leading-snug line-clamp-2">
+                KHÓA ĐÁNH GIÁ TƯ DUY TSA BÁCH KHOA 2K9
+              </h3>
+              <p class="text-xs text-[#737373] mt-2 line-clamp-2">
+                Huấn luyện chuyên sâu 3 cấu phần: Tư duy Toán học, Tư duy Đọc hiểu và Tư duy Khoa học / Giải quyết vấn đề.
+              </p>
+              <div class="flex items-center gap-4 text-xs text-[#525252] mt-3 pt-3 border-t border-slate-100">
+                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i> 48 Buổi</span>
+                <span><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> Đề chuẩn cấu trúc BK</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <div>
+                <span class="text-xs text-[#737373] line-through">2.200.000đ</span>
+                <p class="text-lg font-extrabold text-[#f99d0d]">1.090.000đ</p>
+              </div>
+              <button onclick="openEnrollModal('KHÓA ĐÁNH GIÁ TƯ DUY TSA BÁCH KHOA', '1.090.000đ')" class="px-4 py-2 rounded-full bg-[#0f2a5c] hover:bg-red-600 text-white text-xs font-bold transition-colors">
+                Đăng ký ngay
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6: THPT Math -->
+        <div class="course-card course-thpt rounded-2xl border border-[#e5e5e5] bg-white overflow-hidden shadow-[0px_6px_18px_0px_rgba(23,23,23,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-hero-banner.jpg" alt="Chuyên đề Toán 12 & THPT 9+" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-wider">
+              THPT Quốc Gia 9+
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-emerald-600 transition-colors leading-snug line-clamp-2">
+                CHUYÊN ĐỀ TOÁN 12 & LUYỆN ĐỀ THPT QUỐC GIA 9+
+              </h3>
+              <p class="text-xs text-[#737373] mt-2 line-clamp-2">
+                Trọn bộ 60 dạng toán cốt lõi: Khảo sát hàm số, Oxyz, Tích phân & Xác suất theo định dạng câu hỏi đúng/sai và trả lời ngắn.
+              </p>
+              <div class="flex items-center gap-4 text-xs text-[#525252] mt-3 pt-3 border-t border-slate-100">
+                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i> Toàn bộ bài giảng</span>
+                <span><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> 120+ Đề PDF</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <div>
+                <span class="text-xs text-emerald-600 font-semibold">Tặng kèm khóa ĐGNL</span>
+                <p class="text-lg font-extrabold text-emerald-600">0 VNĐ</p>
+              </div>
+              <a href="/kho-bai-giang" class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors">
+                Vào học ngay
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. PHÒNG THI THỬ ĐGNL ONLINE (CBT EXAM ENGINE) -->
+  <section id="exam-section" class="py-14 md:py-20 bg-[#fafafa] border-y border-[#e5e5e5]">
+    <div class="max-w-[1240px] mx-auto px-4">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-200/60 inline-flex items-center gap-1.5">
+            <span class="size-2 rounded-full bg-red-500 animate-pulse"></span> Hệ Thống Thi Trực Tuyến
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#171717] tracking-tight mt-2">
+            Thi thử miễn phí – Đề chuẩn ma trận cấu trúc
+          </h2>
+          <p class="text-sm text-[#525252] mt-1">
+            Hệ thống thi trắc nghiệm trên máy tính (CBT) tương tự phòng thi thật. Bấm giờ, chấm điểm tự động và ước lượng điểm theo mô hình IRT.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <button onclick="openCBTModal('vact')" class="px-6 py-3 rounded-full bg-[#171717] hover:bg-[#0f2a5c] text-white text-xs md:text-sm font-bold transition-colors flex items-center gap-2 shadow-sm">
+            <i class="fa-solid fa-laptop-code text-[#f99d0d]"></i>
+            <span>Vào phòng thi ngay</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Exam Cards List -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Exam Card 1 -->
+        <div class="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-sm hover:border-[#f99d0d] transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-orange-100 text-[#f99d0d] text-xs font-bold">V-ACT · TP.HCM</span>
+              <span class="text-xs text-[#737373] font-medium"><i class="fa-regular fa-clock mr-1"></i> 60 Phút</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#171717] group-hover:text-[#f99d0d] transition-colors leading-snug">
+              ĐỀ THI THỬ ĐGNL V-ACT 2026 - 2027 (LẦN 1)
+            </h3>
+            <p class="text-xs text-[#525252] mt-2 leading-relaxed">
+              Bao gồm: Toán học & Xử lý số liệu, Tư duy logic, Ngôn ngữ Tiếng Việt & Tiếng Anh. Chấm điểm theo mô hình IRT 1200 điểm.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-600"><i class="fa-solid fa-circle-check mr-1"></i> Miễn phí 100%</span>
+            <button onclick="openCBTModal('vact')" class="px-4 py-2 rounded-full bg-[#f99d0d] hover:bg-[#e08905] text-white text-xs font-bold transition-all shadow-sm">
+              Bắt đầu làm bài
+            </button>
+          </div>
+        </div>
+
+        <!-- Exam Card 2 -->
+        <div class="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-sm hover:border-[#1e69f3] transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-blue-100 text-[#1e69f3] text-xs font-bold">HSA · Hà Nội</span>
+              <span class="text-xs text-[#737373] font-medium"><i class="fa-regular fa-clock mr-1"></i> 60 Phút</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#171717] group-hover:text-[#1e69f3] transition-colors leading-snug">
+              ĐỀ THI THỬ ĐGNL HSA ĐHQG HÀ NỘI (LẦN 1)
+            </h3>
+            <p class="text-xs text-[#525252] mt-2 leading-relaxed">
+              Bao gồm: Tư duy định lượng (Toán), Tư duy định tính (Ngữ văn) và Khoa học. Thang điểm chuẩn 150 điểm.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-600"><i class="fa-solid fa-circle-check mr-1"></i> Miễn phí 100%</span>
+            <button onclick="openCBTModal('hsa')" class="px-4 py-2 rounded-full bg-[#1e69f3] hover:bg-[#1254cb] text-white text-xs font-bold transition-all shadow-sm">
+              Bắt đầu làm bài
+            </button>
+          </div>
+        </div>
+
+        <!-- Exam Card 3 -->
+        <div class="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-sm hover:border-red-500 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs font-bold">TSA · Bách Khoa</span>
+              <span class="text-xs text-[#737373] font-medium"><i class="fa-regular fa-clock mr-1"></i> 60 Phút</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#171717] group-hover:text-red-600 transition-colors leading-snug">
+              ĐỀ THI THỬ ĐÁNH GIÁ TƯ DUY TSA BÁCH KHOA
+            </h3>
+            <p class="text-xs text-[#525252] mt-2 leading-relaxed">
+              Cấu trúc 3 phần: Tư duy Toán học, Tư duy Đọc hiểu, Tư duy Khoa học và Giải quyết vấn đề. Thang điểm 100 điểm.
+            </p>
+          </div>
+          <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-600"><i class="fa-solid fa-circle-check mr-1"></i> Miễn phí 100%</span>
+            <button onclick="openCBTModal('tsa')" class="px-4 py-2 rounded-full bg-red-600 hover:bg-red-700 text-white text-xs font-bold transition-all shadow-sm">
+              Bắt đầu làm bài
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. THẦY HOÀNG LUÂN - GIẢNG VIÊN DẪN ĐƯỜNG -->
+  <section id="teacher" class="py-14 md:py-20 bg-white">
+    <div class="max-w-[1240px] mx-auto px-4">
+      <div class="rounded-3xl border border-[#e5e5e5] bg-[linear-gradient(135deg,#fcfbf8_0%,#ffffff_100%)] p-6 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <div class="md:col-span-5 flex justify-center">
+          <div class="relative">
+            <div class="size-64 sm:size-72 rounded-3xl overflow-hidden border-4 border-white shadow-xl relative z-10">
+              <img src="/assets/hoang-luan-avatar.jpg" alt="Thầy Hoàng Luân" class="size-full object-cover" onerror="this.src='/assets/phuc-k9-fallback-teacher.jpg'"/>
+            </div>
+            <div class="absolute -top-4 -left-4 size-24 bg-amber-300/40 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-4 -right-4 size-32 bg-blue-300/40 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 z-20 bg-[#0f2a5c] text-white px-5 py-1.5 rounded-full text-xs font-bold shadow-md whitespace-nowrap">
+              Thầy Hoàng Luân · ĐGNL 2K9
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-7 space-y-5">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#f99d0d] bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60">
+            Người truyền cảm hứng & bứt phá điểm số
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#171717] tracking-tight">
+            Thầy Hoàng Luân & Ban Chuyên Môn
+          </h2>
+          <p class="text-sm md:text-base text-[#525252] leading-relaxed">
+            Với phương châm <b>"Tận tâm dẫn lối - Chuyên cần bứt phá"</b>, Thầy Hoàng Luân không dạy học vẹt mà hướng dẫn học sinh nắm chắc bản chất, tư duy logic phản biện và phương pháp tối ưu hóa thời gian trong phòng thi ĐGNL.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+              <i class="fa-solid fa-check-circle text-emerald-500 text-lg mt-0.5"></i>
+              <div>
+                <b class="text-xs text-[#171717] block">Bản chất & Tư duy loại trừ</b>
+                <span class="text-[11px] text-[#737373]">Nhận diện bẫy đề thi và giải quyết câu hỏi trong dưới 60s.</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+              <i class="fa-solid fa-shield-halved text-[#1e69f3] text-lg mt-0.5"></i>
+              <div>
+                <b class="text-xs text-[#171717] block">Đồng hành 24/7 qua Zalo</b>
+                <span class="text-[11px] text-[#737373]">Giải đáp thắc mắc bài tập cá nhân trực tiếp cùng thầy.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 flex flex-wrap items-center gap-3">
+            <a href="https://zalo.me/0372356269" target="_blank" class="h-11 px-6 rounded-full bg-[#0f2a5c] hover:bg-[#1e69f3] text-white text-xs font-bold transition-colors inline-flex items-center gap-2">
+              <i class="fa-solid fa-comment-dots text-amber-400"></i>
+              <span>Nhắn Zalo Thầy Luân: 0372 356 269</span>
+            </a>
+            <a href="#register" class="h-11 px-6 rounded-full border border-[#171717] text-[#171717] hover:bg-[#171717] hover:text-white text-xs font-bold transition-colors inline-flex items-center">
+              Đăng ký kèm riêng 1-1
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CẨM NANG & TIN TỨC CHUYÊN SÂU ĐGNL (MÔ HÌNH IRT 3PL) -->
+  <section id="articles" class="py-14 md:py-20 bg-[#fafafa] border-t border-[#e5e5e5]">
+    <div class="max-w-[1240px] mx-auto px-4">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#1e69f3] bg-blue-50 px-3 py-1 rounded-full border border-blue-200/60">
+            Kiến thức & Phương pháp đo lường
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#171717] tracking-tight mt-2">
+            Cẩm nang & Phổ điểm ĐGNL 2026 - 2027
+          </h2>
+          <p class="text-sm text-[#525252] mt-1">
+            Phân tích lý thuyết ứng đáp câu hỏi (IRT), cấu trúc đề thi và chiến thuật làm bài chuẩn quốc tế.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Articles Grid matching Empire -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Article 1 -->
+        <article class="bg-white rounded-2xl border border-[#e5e5e5] overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col group cursor-pointer" onclick="openArticle(1)">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-news-schedule.jpg" alt="Lịch thi ĐGNL V-ACT ĐHQG TP.HCM 2027" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-red-500 text-white text-[11px] font-bold">
+              Lịch thi
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-[11px] text-[#737373] font-semibold">03/11/2026 · Cẩm nang tuyển sinh</span>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-[#f99d0d] transition-colors leading-snug mt-1">
+                Lịch thi đánh giá năng lực (ĐGLN V-ACT) ĐH Quốc gia TP.HCM 2027 (Dự kiến)
+              </h3>
+              <p class="text-xs text-[#525252] mt-2 line-clamp-3 leading-relaxed">
+                Kỳ thi ĐGNL ĐHQG TP.HCM năm 2027 dự kiến tổ chức 2 đợt tại 15 tỉnh, thành phố. Đợt 1 diễn ra ngày 28.3.2027, quy mô dự kiến hơn 200.000 lượt đăng ký xét tuyển.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 text-xs font-bold text-[#f99d0d] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Đọc toàn văn bài viết <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="bg-white rounded-2xl border border-[#e5e5e5] overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col group cursor-pointer" onclick="openArticle(2)">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-news-irt-abc.jpg" alt="Tham số a b c trong IRT" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-[#0f2a5c] text-white text-[11px] font-bold">
+              Phương pháp IRT
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-[11px] text-[#737373] font-semibold">30/10/2026 · Phân tích chuyên sâu</span>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-[#f99d0d] transition-colors leading-snug mt-1">
+                Tham số a, b, c trong mô hình IRT 3PL giúp đọc chất lượng câu hỏi
+              </h3>
+              <p class="text-xs text-[#525252] mt-2 line-clamp-3 leading-relaxed">
+                Trong IRT, ba tham số a, b, c lần lượt mô tả độ phân biệt, độ khó và xác suất đoán mò của câu hỏi. Hiểu đúng tham số giúp học sinh tối ưu điểm số thông minh.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 text-xs font-bold text-[#f99d0d] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Đọc toàn văn bài viết <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="bg-white rounded-2xl border border-[#e5e5e5] overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col group cursor-pointer" onclick="openArticle(3)">
+          <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <img src="/assets/empire/empire-news-theta.jpg" alt="Theta âm trong IRT" class="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-[#1e69f3] text-white text-[11px] font-bold">
+              Thang điểm ĐGNL
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-[11px] text-[#737373] font-semibold">30/10/2026 · Cẩm nang thi cử</span>
+              <h3 class="text-base font-bold text-[#171717] group-hover:text-[#f99d0d] transition-colors leading-snug mt-1">
+                Theta âm trong thang đo IRT có đồng nghĩa học sinh yếu hay không?
+              </h3>
+              <p class="text-xs text-[#525252] mt-2 line-clamp-3 leading-relaxed">
+                Theta âm không đồng nghĩa với năng lực âm. Đây là tọa độ trên thang đo IRT phụ thuộc vào mốc tham chiếu và cách chuẩn hóa của hội đồng ra đề.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 text-xs font-bold text-[#f99d0d] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Đọc toàn văn bài viết <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. KÊNH CỘNG ĐỒNG HOÀNG LUÂN - HỌC CÙNG NHAU, ĐI XA HƠN -->
+  <section class="py-14 md:py-20 bg-white">
+    <div class="max-w-[1240px] mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-[#171717] bg-slate-100 px-3.5 py-1.5 rounded-full">
+          Cộng đồng học tập 2K9
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#171717] tracking-tight">
+          Học cùng nhau, đi xa hơn cùng Thầy Hoàng Luân
+        </h2>
+        <p class="text-sm text-[#525252]">
+          Tham gia các kênh học tập chính thức để nhận thông báo đề thi mới, tài liệu PDF độc quyền và giải đáp câu hỏi trực tiếp mỗi ngày.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <a href="https://zalo.me/0372356269" target="_blank" class="rounded-2xl border border-[#e5e5e5] p-6 bg-white hover:border-[#f99d0d] hover:shadow-lg transition-all flex flex-col justify-between group">
+          <div>
+            <div class="size-12 rounded-xl bg-orange-100 text-[#f99d0d] flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h4 class="text-base font-bold text-[#171717] group-hover:text-[#f99d0d] transition-colors">Kênh Official Hoàng Luân</h4>
+            <p class="text-xs text-[#737373] mt-2">Cập nhật đề thi thử và video phân tích dạng đề trọng tâm hàng tuần.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-100 text-xs font-bold text-[#0f2a5c] flex items-center gap-1">
+            Tham gia ngay <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </div>
+        </a>
+
+        <a href="#courses" class="rounded-2xl border border-[#e5e5e5] p-6 bg-white hover:border-[#1e69f3] hover:shadow-lg transition-all flex flex-col justify-between group">
+          <div>
+            <div class="size-12 rounded-xl bg-blue-100 text-[#1e69f3] flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <h4 class="text-base font-bold text-[#171717] group-hover:text-[#1e69f3] transition-colors">Cộng Đồng HSA Hà Nội</h4>
+            <p class="text-xs text-[#737373] mt-2">Kho đề định lượng, định tính và trao đổi tài liệu ĐHQG Hà Nội.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-100 text-xs font-bold text-[#1e69f3] flex items-center gap-1">
+            Tham gia ngay <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </div>
+        </a>
+
+        <a href="#courses" class="rounded-2xl border border-[#e5e5e5] p-6 bg-white hover:border-amber-500 hover:shadow-lg transition-all flex flex-col justify-between group">
+          <div>
+            <div class="size-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-compass"></i>
+            </div>
+            <h4 class="text-base font-bold text-[#171717] group-hover:text-amber-600 transition-colors">Cộng Đồng V-ACT TP.HCM</h4>
+            <p class="text-xs text-[#737373] mt-2">Chiến thuật làm bài 120 câu, mẹo xử lý số liệu nhanh và tư duy logic.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-100 text-xs font-bold text-amber-600 flex items-center gap-1">
+            Tham gia ngay <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </div>
+        </a>
+
+        <a href="https://zalo.me/0372356269" target="_blank" class="rounded-2xl border border-[#e5e5e5] p-6 bg-white hover:border-emerald-500 hover:shadow-lg transition-all flex flex-col justify-between group">
+          <div>
+            <div class="size-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h4 class="text-base font-bold text-[#171717] group-hover:text-emerald-600 transition-colors">Hotline Zalo Trực Tiếp</h4>
+            <p class="text-xs text-[#737373] mt-2">Số hỗ trợ chính thức: <b>0372 356 269</b>. Trợ giảng giải đáp 24/7.</p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-100 text-xs font-bold text-emerald-600 flex items-center gap-1">
+            Nhắn Zalo ngay <i class="fa-solid fa-angle-right text-[10px]"></i>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. LEAD CAPTURE FORM BANNER (EMPIRE SIGNATURE BANNER) -->
+  <section id="register" class="py-14 md:py-20 bg-[#0f2a5c] text-white relative overflow-hidden">
+    <div class="absolute -top-24 -left-24 size-[340px] rounded-full bg-[#f99d0d]/15 blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 size-[340px] rounded-full bg-blue-500/20 blur-3xl"></div>
+
+    <div class="max-w-[1240px] mx-auto px-4 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div class="lg:col-span-6 space-y-4">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold uppercase tracking-wider">
+          ✦ Tư Vấn Lộ Trình 1 - 1 Miễn Phí
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+          Chưa biết bắt đầu từ đâu? Nhận lộ trình ĐGNL miễn phí ngay!
+        </h2>
+        <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+          Để lại thông tin bên dưới, Thầy Hoàng Luân và ban chuyên môn sẽ gọi điện tư vấn lộ trình bứt phá điểm số tối ưu nhất cho bạn trong <b>15 phút</b>.
+        </p>
+
+        <div class="space-y-2.5 pt-2 text-xs text-slate-200">
+          <div class="flex items-center gap-2.5">
+            <i class="fa-solid fa-check text-[#f99d0d]"></i>
+            <span>Kiểm tra năng lực đầu vào miễn phí bằng đề chuẩn ma trận.</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <i class="fa-solid fa-check text-[#f99d0d]"></i>
+            <span>Thiết kế thời gian biểu ôn tập cá nhân hóa theo từng mục tiêu trường ĐH.</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <i class="fa-solid fa-check text-[#f99d0d]"></i>
+            <span>Tặng ngay tài liệu 500 câu trắc nghiệm trọng tâm 2026 - 2027.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="lg:col-span-6">
+        <form onsubmit="handleConsultationSubmit(event)" class="bg-white rounded-3xl p-6 sm:p-8 text-[#171717] shadow-2xl space-y-4 border border-white/20">
+          <h3 class="text-lg font-bold text-[#0f2a5c] text-center mb-1">
+            ĐĂNG KÝ NHẬN LỘ TRÌNH ÔN THI
+          </h3>
+          <p class="text-xs text-[#737373] text-center mb-4">
+            Cam kết bảo mật thông tin · Hoàn toàn miễn phí
+          </p>
+
+          <div>
+            <label class="block text-xs font-bold text-[#404040] mb-1">Họ và tên của bạn *</label>
+            <input type="text" id="reg-name" required placeholder="Ví dụ: Nguyễn Văn An" class="w-full h-11 px-4 rounded-xl border border-[#e5e5e5] text-sm focus:outline-none focus:border-[#f99d0d] focus:ring-2 focus:ring-amber-500/20"/>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-bold text-[#404040] mb-1">Số điện thoại / Zalo *</label>
+              <input type="tel" id="reg-phone" required placeholder="Ví dụ: 0372356269" class="w-full h-11 px-4 rounded-xl border border-[#e5e5e5] text-sm focus:outline-none focus:border-[#f99d0d] focus:ring-2 focus:ring-amber-500/20"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-[#404040] mb-1">Trường THPT & Lớp</label>
+              <input type="text" id="reg-school" placeholder="Ví dụ: THPT Chuyên 12A1" class="w-full h-11 px-4 rounded-xl border border-[#e5e5e5] text-sm focus:outline-none focus:border-[#f99d0d] focus:ring-2 focus:ring-amber-500/20"/>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[#404040] mb-1">Kỳ thi bạn hướng tới *</label>
+            <select id="reg-exam" class="w-full h-11 px-4 rounded-xl border border-[#e5e5e5] text-sm focus:outline-none focus:border-[#f99d0d] bg-white text-[#171717]">
+              <option value="V-ACT">V-ACT · ĐHQG TP.HCM (Mục tiêu 900+)</option>
+              <option value="HSA">HSA · ĐHQG Hà Nội (Mục tiêu 100+)</option>
+              <option value="TSA">TSA · ĐH Bách Khoa Hà Nội</option>
+              <option value="THPT">THPT Quốc Gia 9+ (Khối A, A1, B, D)</option>
+            </select>
+          </div>
+
+          <button type="submit" id="reg-btn" class="w-full h-12 rounded-xl bg-[#f99d0d] hover:bg-[#e08905] text-white font-bold text-sm tracking-wide transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2">
+            <span>GỬI ĐĂNG KÝ TƯ VẤN NGAY</span>
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+          </button>
+
+          <p id="reg-status" class="text-xs text-center font-semibold hidden"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. ỦNG HỘ WEB & HỌC PHÍ QUA NGÂN HÀNG BIDV -->
+  <section class="py-14 md:py-20 bg-white border-t border-[#e5e5e5]">
+    <div class="max-w-[1240px] mx-auto px-4">
+      <div class="rounded-3xl border border-[#e5e5e5] bg-[#fafafa] p-6 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <div class="md:col-span-7 space-y-4">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#0f2a5c] bg-blue-100/60 px-3 py-1 rounded-full">
+            Thông tin thanh toán chính thức
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#171717] tracking-tight">
+            Ủng Hộ & Thanh Toán Khóa Học Qua Ngân Hàng BIDV
+          </h2>
+          <p class="text-sm text-[#525252] leading-relaxed">
+            Mọi sự ủng hộ duy trì máy chủ hệ thống hoặc đóng học phí khóa học đều được tiếp nhận qua tài khoản ngân hàng chính chủ của <b>Thầy Hoàng Luân</b>:
+          </p>
+
+          <div class="bg-white rounded-2xl border border-[#e5e5e5] p-5 space-y-3 shadow-sm max-w-lg">
+            <div class="flex items-center justify-between pb-2.5 border-b border-slate-100">
+              <span class="text-xs text-[#737373]">Ngân hàng:</span>
+              <span class="text-sm font-bold text-[#0f2a5c]">BIDV (Ngân hàng Đầu tư và Phát triển VN)</span>
+            </div>
+            <div class="flex items-center justify-between pb-2.5 border-b border-slate-100">
+              <span class="text-xs text-[#737373]">Số tài khoản:</span>
+              <div class="flex items-center gap-2">
+                <span class="text-base font-extrabold text-[#f99d0d] tracking-wider">8803890053</span>
+                <button onclick="navigator.clipboard.writeText('8803890053'); alert('Đã sao chép STK BIDV: 8803890053');" class="text-xs text-[#0f2a5c] hover:underline"><i class="fa-regular fa-copy"></i> Sao chép</button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pb-2.5 border-b border-slate-100">
+              <span class="text-xs text-[#737373]">Chủ tài khoản:</span>
+              <span class="text-sm font-bold text-[#171717]">NGUYEN HOANG LUAN</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-[#737373]">Cú pháp chuyển khoản:</span>
+              <span class="text-xs font-semibold text-emerald-600">HOANG LUAN [SĐT CỦA BẠN]</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-[#737373]">
+            * Sau khi chuyển khoản, bạn vui lòng nhắn tin qua Zalo <b>0372 356 269</b> kèm ảnh chụp biên lai để thầy kích hoạt tài khoản VIP ngay trong 5 phút.
+          </p>
+        </div>
+
+        <div class="md:col-span-5 flex flex-col items-center justify-center">
+          <div class="p-3 bg-white rounded-2xl border-2 border-[#f99d0d] shadow-lg text-center max-w-[280px]">
+            <img src="/assets/hoang-luan-bidv-qr.jpg" alt="QR Code BIDV Nguyễn Hoàng Luân" class="size-64 object-contain rounded-xl"/>
+            <p class="text-xs font-bold text-[#0f2a5c] mt-2">Quét mã QR BIDV Hoàng Luân</p>
+            <p class="text-[11px] text-[#737373]">Tự động điền đúng STK & Tên</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FOOTER (EMPIRE SIGNATURE FOOTER) -->
+  <footer class="bg-[#171717] text-white pt-14 pb-10 border-t border-neutral-800 text-xs md:text-sm">
+    <div class="max-w-[1240px] mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-neutral-800">
+      
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="/assets/hoang-luan-avatar.jpg" alt="Hoàng Luân" class="size-10 rounded-full object-cover border border-[#f99d0d]" onerror="this.src='/assets/phuc-k9-fallback-teacher.jpg'"/>
+          <div>
+            <span class="text-base font-extrabold text-white tracking-tight block">HỌC CÙNG HOÀNG LUÂN</span>
+            <span class="text-xs text-neutral-400">Hệ thống Luyện Thi Đánh Giá Năng Lực Toàn Diện</span>
+          </div>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed max-w-sm">
+          Đơn vị đào tạo và luyện thi Đánh Giá Năng Lực (HSA ĐHQG HN, V-ACT ĐHQG TP.HCM, TSA Bách Khoa) hàng đầu với phương châm "Tận tâm dẫn lối - Chuyên cần bứt phá".
+        </p>
+        <div class="flex items-center gap-3 text-sm text-neutral-300">
+          <a href="https://zalo.me/0372356269" target="_blank" class="size-8 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-[#f99d0d] hover:text-white transition-colors"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="size-8 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-[#1e69f3] hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="size-8 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Khóa Học & Kỳ Thi</h4>
+        <ul class="space-y-2 text-xs text-neutral-400">
+          <li><a href="#courses" class="hover:text-white transition-colors">Luyện thi ĐGNL HSA (ĐHQG Hà Nội)</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Luyện thi ĐGNL V-ACT (ĐHQG TP.HCM)</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Luyện thi Đánh Giá Tư Duy TSA Bách Khoa</a></li>
+          <li><a href="#courses" class="hover:text-white transition-colors">Chuyên đề Toán 12 Vận Dụng Cao</a></li>
+          <li><a href="/kho-bai-giang" class="hover:text-white transition-colors text-amber-400 font-semibold">Kho bài giảng & 1200 đề PDF</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Thông Tin Liên Hệ</h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-phone text-[#f99d0d] mt-0.5"></i>
+            <span>Hotline / Zalo: <b class="text-white">0372 356 269</b></span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-envelope text-[#f99d0d] mt-0.5"></i>
+            <span>Email: <b class="text-white">hoangluantft@gmail.com</b></span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-building-columns text-[#f99d0d] mt-0.5"></i>
+            <span>BIDV: 8803890053 - NGUYEN HOANG LUAN</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-shield-halved text-[#f99d0d] mt-0.5"></i>
+            <span>Hệ thống học tập bảo mật & chống sao chép bản quyền</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1240px] mx-auto px-4 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-3">
+      <p>© 2026 HỌC CÙNG HOÀNG LUÂN. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="/kho-bai-giang" class="hover:underline">Kho bài học gốc</a>
+        <a href="#articles" class="hover:underline">Cẩm nang IRT</a>
+        <a href="https://zalo.me/0372356269" class="hover:underline">Hỗ trợ Zalo: 0372 356 269</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 13. FLOATING ZALO WIDGET -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <a href="https://zalo.me/0372356269" target="_blank" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#0068ff] text-white font-bold text-xs shadow-xl hover:scale-105 transition-transform group">
+      <div class="size-7 rounded-full bg-white text-[#0068ff] flex items-center justify-center font-extrabold text-sm">Z</div>
+      <div class="flex flex-col text-left">
+        <span class="text-[10px] text-blue-100 uppercase tracking-wider font-semibold leading-none">Tư vấn 24/7</span>
+        <span class="text-xs leading-tight font-extrabold">0372 356 269</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- 14. CBT EXAM MODAL (REAL INTERACTIVE TEST SIMULATOR) -->
+  <div id="cbt-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-5">
+    <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
+      
+      <!-- CBT Header -->
+      <div class="px-6 py-4 bg-[#0f2a5c] text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="size-8 rounded-lg bg-[#f99d0d] flex items-center justify-center text-white font-bold text-sm">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div>
+            <h3 id="cbt-exam-title" class="text-sm md:text-base font-bold text-white">THI THỬ ĐGNL V-ACT (ĐHQG TP.HCM)</h3>
+            <p class="text-[11px] text-amber-200">Thời gian làm bài: 60:00 · 10 câu hỏi tiêu biểu ma trận</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 font-mono text-sm font-bold">
+            <i class="fa-regular fa-clock"></i> <span id="cbt-timer">60:00</span>
+          </div>
+          <button onclick="closeCBTModal()" class="text-white/70 hover:text-white text-xl p-1" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <!-- CBT Body -->
+      <div class="p-6 overflow-y-auto flex-1 custom-scroll grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Question display -->
+        <div class="lg:col-span-8 space-y-5" id="cbt-question-area">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <span class="text-xs font-bold text-[#0f2a5c] uppercase" id="cbt-q-number">CÂU 1 / 10</span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold" id="cbt-q-tag">Toán & Tư duy logic</span>
+          </div>
+
+          <div class="text-sm sm:text-base font-semibold text-[#171717] leading-relaxed" id="cbt-q-content">
+            Một hộp chứa 5 quả cầu đỏ và 7 quả cầu xanh. Chọn ngẫu nhiên đồng thời 3 quả cầu. Xác suất để chọn được ít nhất 1 quả cầu đỏ là bao nhiêu?
+          </div>
+
+          <div class="space-y-2.5 pt-2" id="cbt-options-list">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <button onclick="cbtPrev()" id="cbt-btn-prev" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors">
+              <i class="fa-solid fa-arrow-left mr-1"></i> Câu trước
+            </button>
+            <button onclick="cbtNext()" id="cbt-btn-next" class="px-5 py-2 rounded-xl bg-[#0f2a5c] hover:bg-[#1e69f3] text-white text-xs font-bold transition-colors">
+              Câu tiếp theo <i class="fa-solid fa-arrow-right ml-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Grid Sidebar -->
+        <div class="lg:col-span-4 bg-slate-50 rounded-2xl p-4 border border-slate-200 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs font-bold text-[#171717] mb-2 flex items-center justify-between">
+              <span>BẢNG TRẢ LỜI</span>
+              <span class="text-[11px] text-slate-500 font-normal" id="cbt-progress">0/10 đã làm</span>
+            </div>
+            <div class="grid grid-cols-5 gap-2" id="cbt-grid-buttons">
+              <!-- 10 question buttons -->
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-200">
+            <div class="flex items-center gap-3 text-[11px] text-slate-600">
+              <span class="size-3 rounded bg-[#f99d0d]"></span> Đã chọn
+              <span class="size-3 rounded bg-white border border-slate-300"></span> Chưa chọn
+            </div>
+            <button onclick="cbtSubmit()" class="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold transition-colors shadow-md flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-check-double"></i>
+              <span>Nộp bài & Chấm điểm</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 15. CBT RESULT MODAL -->
+  <div id="cbt-result-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center space-y-5 shadow-2xl">
+      <div class="size-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+      <div>
+        <h3 class="text-xl font-extrabold text-[#171717]">KẾT QUẢ THI THỬ</h3>
+        <p class="text-xs text-[#737373] mt-1">Ước lượng năng lực theo mô hình phân tích IRT 3PL</p>
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-3 text-left">
+        <div class="flex justify-between items-center text-xs">
+          <span class="text-slate-600">Số câu đúng:</span>
+          <b id="res-correct" class="text-emerald-600 text-sm">8/10</b>
+        </div>
+        <div class="flex justify-between items-center text-xs">
+          <span class="text-slate-600">Điểm quy đổi chuẩn:</span>
+          <b id="res-score" class="text-[#f99d0d] text-base font-extrabold">960 / 1200</b>
+        </div>
+        <div class="flex justify-between items-center text-xs">
+          <span class="text-slate-600">Độ khó trung bình (b):</span>
+          <b class="text-slate-800">+1.24 (Phân hóa tốt)</b>
+        </div>
+        <div class="flex justify-between items-center text-xs">
+          <span class="text-slate-600">Đánh giá năng lực (Theta):</span>
+          <b class="text-blue-600 font-bold">Top 3% thí sinh</b>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="closeCBTResult()" class="w-full py-3 rounded-xl bg-[#0f2a5c] text-white text-xs font-bold hover:bg-[#1e69f3] transition-colors">
+          Xem lại đáp án chi tiết
+        </button>
+        <a href="#register" onclick="closeCBTResult()" class="w-full py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors block text-center">
+          Nhận tư vấn cải thiện điểm cùng Thầy Luân
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 16. ARTICLE READER MODAL -->
+  <div id="article-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-6">
+    <div class="bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
+      <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between shrink-0 bg-slate-50">
+        <span class="text-xs font-bold text-[#f99d0d] uppercase tracking-wider" id="art-category">CẨM NANG ĐGNL</span>
+        <button onclick="closeArticle()" class="text-slate-400 hover:text-slate-700 text-xl p-1" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 custom-scroll space-y-4" id="art-body">
+        <!-- Dynamic article content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 17. ENROLL MODAL -->
+  <div id="enroll-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl border border-slate-200">
+      <div class="size-12 rounded-full bg-amber-100 text-[#f99d0d] flex items-center justify-center text-xl mx-auto">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-[#171717]" id="enroll-course-title">KHÓA HỌC ĐGNL</h3>
+        <p class="text-xs text-[#737373] mt-0.5">Học phí ưu đãi: <b id="enroll-course-price" class="text-[#f99d0d] text-sm">899.000đ</b></p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2">
+        <p class="font-bold text-[#0f2a5c]">Cách thức đăng ký nhanh:</p>
+        <p class="text-slate-600">1. Quét mã QR BIDV hoặc chuyển khoản tới STK: <b>8803890053</b> (BIDV - NGUYEN HOANG LUAN).</p>
+        <p class="text-slate-600">2. Chụp ảnh màn hình chuyển khoản và gửi Zalo: <b>0372 356 269</b>.</p>
+        <p class="text-slate-600">3. Thầy Hoàng Luân sẽ kích hoạt tài khoản và thêm bạn vào nhóm học ngay lập tức.</p>
+      </div>
+
+      <div class="flex gap-3">
+        <button onclick="closeEnrollModal()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50">Đóng</button>
+        <a href="https://zalo.me/0372356269" target="_blank" class="flex-1 py-2.5 rounded-xl bg-[#f99d0d] text-white text-xs font-bold hover:bg-[#e08905] flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-paper-plane text-[11px]"></i> Nhắn Zalo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & CBT ENGINE -->
+  <script>
+    // Course Tab Filtering
+    function filterCourse(type) {
+      document.querySelectorAll('.course-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-[#171717]', 'text-white');
+        btn.classList.add('bg-slate-100', 'text-[#404040]');
+      });
+      const activeBtn = document.getElementById('tab-' + type);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-[#404040]');
+        activeBtn.classList.add('bg-[#171717]', 'text-white');
+      }
+
+      const cards = document.querySelectorAll('.course-card');
+      cards.forEach(card => {
+        if (type === 'all' || card.classList.contains('course-' + type)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Mobile nav toggle
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('hidden');
+    }
+
+    // Enroll modal
+    function openEnrollModal(title, price) {
+      document.getElementById('enroll-course-title').innerText = title;
+      document.getElementById('enroll-course-price').innerText = price;
+      document.getElementById('enroll-modal').classList.remove('hidden');
+    }
+    function closeEnrollModal() {
+      document.getElementById('enroll-modal').classList.add('hidden');
+    }
+
+    // Lead registration form
+    async function handleConsultationSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('reg-btn');
+      const status = document.getElementById('reg-status');
+      const name = document.getElementById('reg-name').value;
+      const phone = document.getElementById('reg-phone').value;
+      const school = document.getElementById('reg-school').value;
+      const exam = document.getElementById('reg-exam').value;
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+
+      try {
+        const res = await fetch('/api/consultation', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ name, phone, school, targetExam: exam })
+        });
+        const data = await res.json();
+        status.className = 'text-xs text-center font-semibold text-emerald-600 block mt-2';
+        status.innerText = '✅ Đăng ký thành công! Thầy Hoàng Luân sẽ gọi lại cho bạn trong 15 phút.';
+        btn.innerHTML = 'ĐÃ GỬI THÀNH CÔNG';
+        setTimeout(() => {
+          window.open('https://zalo.me/0372356269', '_blank');
+        }, 1200);
+      } catch (err) {
+        status.className = 'text-xs text-center font-semibold text-emerald-600 block mt-2';
+        status.innerText = '✅ Đã lưu thông tin! Vui lòng kết nối qua Zalo 0372 356 269 để nhận tư vấn ngay.';
+      }
+    }
+
+    // Article Reader
+    const articlesData = {
+      1: {
+        title: 'Lịch thi đánh giá năng lực (ĐGLN V-ACT) ĐH Quốc gia TP.HCM 2027 (Dự kiến)',
+        category: 'LỊCH THI & TUYỂN SINH',
+        date: '03/11/2026 · Ban Chuyên Môn Hoàng Luân',
+        body: `
+          <p class="text-sm text-slate-700 leading-relaxed">Kỳ thi Đánh giá năng lực (ĐGLN V-ACT) ĐHQG TP.HCM năm 2027 dự kiến tiếp tục được tổ chức thành 2 đợt thi tập trung tại 15 tỉnh, thành phố trên cả nước.</p>
+          <div class="p-4 rounded-xl bg-orange-50 border border-orange-100 text-xs space-y-1.5 my-3">
+            <p><b>Đợt 1:</b> Thi vào ngày <b>28.03.2027</b>. Cổng mở đăng ký từ ngày 22.01 đến 12.02.2027.</p>
+            <p><b>Đợt 2:</b> Thi vào cuối tháng 05.2027. Kết quả công bố sau 7 ngày.</p>
+          </div>
+          <h4 class="text-sm font-bold text-[#0f2a5c] mt-4">Cấu trúc đề thi V-ACT 120 câu / 150 phút:</h4>
+          <ul class="list-disc pl-5 text-xs text-slate-600 space-y-1 my-2">
+            <li>Phần 1: Sử dụng ngôn ngữ (Tiếng Việt: 20 câu, Tiếng Anh: 20 câu).</li>
+            <li>Phần 2: Toán học, Tư duy logic và Phân tích số liệu (30 câu).</li>
+            <li>Phần 3: Giải quyết vấn đề Khoa học Tự nhiên & Xã hội (50 câu).</li>
+          </ul>
+          <p class="text-xs text-slate-600 mt-3">Thầy Hoàng Luân khuyến khích các bạn 2K9 nên thi ngay từ Đợt 1 để tạo tâm lý thoải mái và nắm chắc cơ hội xét tuyển sớm vào các trường Đại học thành viên ĐHQG TP.HCM, ĐH Kinh tế TP.HCM, ĐH Y Dược...</p>
+        `
+      },
+      2: {
+        title: 'Tham số a, b, c trong mô hình IRT 3PL giúp đọc chất lượng câu hỏi ĐGNL',
+        category: 'PHƯƠNG PHÁP IRT ĐO LƯỜNG',
+        date: '30/10/2026 · Thầy Hoàng Luân',
+        body: `
+          <p class="text-sm text-slate-700 leading-relaxed">Trong lý thuyết ứng đáp câu hỏi (Item Response Theory - IRT), mô hình 3 tham số (3PL) là tiêu chuẩn vàng được các kỳ thi HSA và V-ACT áp dụng để tính điểm cho thí sinh.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
+            <div class="p-3 bg-slate-50 border rounded-xl">
+              <b class="text-xs text-[#0f2a5c] block">Tham số a (Độ phân biệt)</b>
+              <span class="text-[11px] text-slate-600">Đo khả năng phân loại học sinh giỏi và học sinh trung bình. Giá trị tốt nhất từ 1.0 đến 2.0.</span>
+            </div>
+            <div class="p-3 bg-slate-50 border rounded-xl">
+              <b class="text-xs text-[#f99d0d] block">Tham số b (Độ khó)</b>
+              <span class="text-[11px] text-slate-600">Mức năng lực cần thiết để có 50% cơ hội làm đúng câu hỏi. Thường dao động từ -3.0 đến +3.0.</span>
+            </div>
+            <div class="p-3 bg-slate-50 border rounded-xl">
+              <b class="text-xs text-blue-600 block">Tham số c (Đoán mò)</b>
+              <span class="text-[11px] text-slate-600">Xác suất một thí sinh không có kiến thức vẫn chọn đúng (thường quanh mức 0.20 - 0.25).</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600"><b>Lời khuyên từ Thầy Hoàng Luân:</b> Đừng sa đà vào các câu hỏi mẹo vặt vô bổ. Hãy tập trung luyện các câu hỏi có tham số độ phân biệt cao (a > 1.2), vì đây là những câu giúp bạn nhảy vọt từ mức 800 lên 950+ V-ACT.</p>
+        `
+      },
+      3: {
+        title: 'Theta âm trong thang đo IRT có đồng nghĩa với học sinh yếu hay không?',
+        category: 'PHÂN TÍCH PHỔ ĐIỂM',
+        date: '30/10/2026 · Thầy Hoàng Luân',
+        body: `
+          <p class="text-sm text-slate-700 leading-relaxed">Rất nhiều bạn sau khi thi thử nhận được thông số Theta âm (ví dụ: θ = -0.45) thì lo lắng nghĩ rằng mình bị điểm âm hoặc học lực kém. Điều này hoàn toàn sai lầm!</p>
+          <p class="text-xs text-slate-600 mt-2">Trong thang chuẩn IRT chuẩn hóa, giá trị trung bình toàn bộ quần thể thí sinh được quy ước là <b>θ = 0</b> với độ lệch chuẩn là 1. Do đó:</p>
+          <ul class="list-disc pl-5 text-xs text-slate-600 space-y-1 my-2">
+            <li>θ = 0: Năng lực đúng bằng mức trung bình của toàn bộ thí sinh thi đợt đó.</li>
+            <li>θ âm nhẹ (ví dụ -0.2): Vẫn đạt khoảng 650 - 700 điểm V-ACT, hoàn toàn đủ điều kiện vào nhiều trường đại học.</li>
+            <li>θ > +1.5: Thí sinh nằm trong nhóm 7% điểm cao nhất cả nước.</li>
+          </ul>
+          <p class="text-xs text-slate-600">Hãy để Thầy Hoàng Luân giúp bạn cải thiện Theta từng ngày qua lộ trình 96 giờ luyện đề trọng tâm nhé!</p>
+        `
+      }
+    };
+
+    function openArticle(id) {
+      const art = articlesData[id];
+      if (!art) return;
+      document.getElementById('art-category').innerText = art.category;
+      document.getElementById('art-body').innerHTML = `
+        <h2 class="text-xl md:text-2xl font-extrabold text-[#171717] leading-tight">${art.title}</h2>
+        <p class="text-xs text-[#737373] pb-3 border-b border-slate-100">${art.date}</p>
+        <div class="space-y-3 pt-2 text-[#404040]">${art.body}</div>
+      `;
+      document.getElementById('article-modal').classList.remove('hidden');
+    }
+    function closeArticle() {
+      document.getElementById('article-modal').classList.add('hidden');
+    }
+
+    // CBT ENGINE (INTERACTIVE COMPUTER-BASED TEST)
+    const sampleQuestions = [
+      {
+        q: "Một hộp chứa 5 quả cầu đỏ và 7 quả cầu xanh. Chọn ngẫu nhiên đồng thời 3 quả cầu. Xác suất để chọn được ít nhất 1 quả cầu đỏ là:",
+        tag: "Toán & Xác suất",
+        options: ["37/44", "3/44", "35/44", "7/11"],
+        ans: 0,
+        explain: "Số cách chọn 3 quả bất kì: C(12,3) = 220. Số cách chọn 3 quả toàn màu xanh: C(7,3) = 35. Xác suất ít nhất 1 đỏ = 1 - 35/220 = 185/220 = 37/44."
+      },
+      {
+        q: "Cho hàm số y = f(x) có đạo hàm f'(x) = x(x-1)^2(x+2)^3. Số điểm cực trị của hàm số đã cho là:",
+        tag: "Toán Giải tích",
+        options: ["2", "3", "1", "4"],
+        ans: 0,
+        explain: "Điểm cực trị là nghiệm bội lẻ của f'(x)=0. Nghiệm x=0 (bội 1) và x=-2 (bội 3) là bội lẻ. Nghiệm x=1 là nghiệm bội chẵn nên không đổi dấu. Vậy có 2 cực trị."
+      },
+      {
+        q: "Trong một cuộc thi gồm 4 thí sinh A, B, C, D. Biết rằng: 'Nếu A đạt giải nhất thì B đạt giải nhì. C không đạt giải nhì khi và chỉ khi D đạt giải ba'. Nếu B không đạt giải nhì, mệnh đề nào sau đây chắc chắn ĐÚNG?",
+        tag: "Tư duy Logic",
+        options: ["A không đạt giải nhất", "A đạt giải nhất", "D đạt giải nhất", "C đạt giải nhất"],
+        ans: 0,
+        explain: "Mệnh đề P -> Q tương đương phủ định: Phủ định Q -> Phủ định P. Vì B không đạt giải nhì nên A không đạt giải nhất."
+      },
+      {
+        q: "Một người gửi 100 triệu đồng vào ngân hàng với lãi suất 6.5%/năm theo thể thức lãi kép. Sau 3 năm, số tiền cả gốc lẫn lãi người đó nhận được là:",
+        tag: "Xử lý số liệu",
+        options: ["120.79 triệu đồng", "119.50 triệu đồng", "121.50 triệu đồng", "118.00 triệu đồng"],
+        ans: 0,
+        explain: "A = P*(1+r)^n = 100 * (1 + 0.065)^3 = 120.794.962 đồng."
+      },
+      {
+        q: "Từ nào sau đây viết ĐÚNG chính tả tiếng Việt trong văn bản học thuật?",
+        tag: "Ngôn ngữ Tiếng Việt",
+        options: ["Sáp nhập", "Sát nhập", "Xáp nhập", "Xát nhập"],
+        ans: 0,
+        explain: "'Sáp nhập' (từ Hán - Việt: sáp nghĩa là cắm vào, gom lại) là từ đúng chuẩn chính tả tiếng Việt."
+      },
+      {
+        q: "Choose the word that best completes the sentence: 'The university board decided to _____ the scholarship program to accommodate students from rural provinces.'",
+        tag: "Tiếng Anh HSA",
+        options: ["expand", "contract", "narrow", "deter"],
+        ans: 0,
+        explain: "'Expand' có nghĩa là mở rộng quy mô chương trình học bổng, phù hợp với ngữ cảnh 'accommodate students from rural provinces'."
+      },
+      {
+        q: "Trong không gian Oxyz, mặt cầu (S): (x-1)^2 + (y+2)^2 + (z-3)^2 = 16 có tọa độ tâm I và bán kính R lần lượt là:",
+        tag: "Hình học Oxyz",
+        options: ["I(1; -2; 3), R = 4", "I(-1; 2; -3), R = 4", "I(1; -2; 3), R = 16", "I(1; 2; 3), R = 4"],
+        ans: 0,
+        explain: "Phương trình chuẩn (x-a)^2 + (y-b)^2 + (z-c)^2 = R^2 => I(1; -2; 3) và R = sqrt(16) = 4."
+      },
+      {
+        q: "Một vật dao động điều hòa với phương trình x = 6cos(4πt - π/3) (cm). Vận tốc cực đại của vật là:",
+        tag: "Khoa học Vật lý",
+        options: ["24π cm/s", "12π cm/s", "6π cm/s", "4π cm/s"],
+        ans: 0,
+        explain: "v_max = omega * A = 4pi * 6 = 24pi cm/s."
+      },
+      {
+        q: "Kim loại nào sau đây có tính dẫn điện tốt nhất trong tất cả các kim loại?",
+        tag: "Khoa học Hóa học",
+        options: ["Bạc (Ag)", "Đồng (Cu)", "Vàng (Au)", "Nhôm (Al)"],
+        ans: 0,
+        explain: "Thứ tự dẫn điện giảm dần: Bạc (Ag) > Đồng (Cu) > Vàng (Au) > Nhôm (Al) > Sắt (Fe)."
+      },
+      {
+        q: "Giai đoạn nào trong tiến trình lịch sử Việt Nam đánh dấu sự kết thúc hoàn toàn của chế độ phong kiến nghìn năm?",
+        tag: "Khoa học Lịch sử",
+        options: ["Cách mạng Tháng Tám năm 1945", "Chiến thắng Điện Biên Phủ 1954", "Hiệp định Genève 1954", "Giải phóng miền Nam 1975"],
+        ans: 0,
+        explain: "Cách mạng Tháng Tám năm 1945 với sự kiện vua Bảo Đại thoái vị ngày 30/8/1945 đã chấm dứt hoàn toàn chế độ phong kiến Việt Nam."
+      }
+    ];
+
+    let currentQIndex = 0;
+    let userAnswers = {};
+    let timerInterval = null;
+    let timeLeft = 60 * 60;
+
+    function openCBTModal(type) {
+      currentQIndex = 0;
+      userAnswers = {};
+      timeLeft = 60 * 60;
+      clearInterval(timerInterval);
+      
+      const title = type === 'hsa' ? 'THI THỬ ĐGNL HSA (ĐHQG HÀ NỘI)' : (type === 'tsa' ? 'THI THỬ ĐÁNH GIÁ TƯ DUY TSA BÁCH KHOA' : 'THI THỬ ĐGNL V-ACT (ĐHQG TP.HCM)');
+      document.getElementById('cbt-exam-title').innerText = title;
+      
+      renderCBTQuestion();
+      renderCBTGrid();
+      
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          cbtSubmit();
+          return;
+        }
+        const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        const s = (timeLeft % 60).toString().padStart(2, '0');
+        document.getElementById('cbt-timer').innerText = m + ':' + s;
+      }, 1000);
+
+      document.getElementById('cbt-modal').classList.remove('hidden');
+    }
+
+    function closeCBTModal() {
+      if (confirm('Bạn có chắc muốn thoát phòng thi? Tiến trình bài làm sẽ bị hủy.')) {
+        clearInterval(timerInterval);
+        document.getElementById('cbt-modal').classList.add('hidden');
+      }
+    }
+
+    function renderCBTQuestion() {
+      const q = sampleQuestions[currentQIndex];
+      document.getElementById('cbt-q-number').innerText = 'CÂU ' + (currentQIndex + 1) + ' / ' + sampleQuestions.length;
+      document.getElementById('cbt-q-tag').innerText = q.tag;
+      document.getElementById('cbt-q-content').innerText = q.q;
+
+      const optContainer = document.getElementById('cbt-options-list');
+      optContainer.innerHTML = '';
+
+      q.options.forEach((opt, idx) => {
+        const char = String.fromCharCode(65 + idx);
+        const isSelected = userAnswers[currentQIndex] === idx;
+        const btn = document.createElement('button');
+        btn.className = 'w-full p-3.5 rounded-xl border text-left text-xs sm:text-sm font-medium transition-all flex items-center gap-3 ' + 
+          (isSelected ? 'border-[#f99d0d] bg-amber-50 text-[#f99d0d] font-bold shadow-sm' : 'border-slate-200 hover:border-slate-300 bg-white text-slate-800');
+        btn.innerHTML = `<span class="size-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${isSelected ? 'bg-[#f99d0d] text-white' : 'bg-slate-100 text-slate-600'}">${char}</span><span>${opt}</span>`;
+        btn.onclick = () => {
+          userAnswers[currentQIndex] = idx;
+          renderCBTQuestion();
+          renderCBTGrid();
+        };
+        optContainer.appendChild(btn);
+      });
+
+      document.getElementById('cbt-btn-prev').disabled = currentQIndex === 0;
+      document.getElementById('cbt-btn-next').innerText = currentQIndex === sampleQuestions.length - 1 ? 'Xem lại bảng làm' : 'Câu tiếp theo →';
+    }
+
+    function renderCBTGrid() {
+      const grid = document.getElementById('cbt-grid-buttons');
+      grid.innerHTML = '';
+      sampleQuestions.forEach((_, idx) => {
+        const isAnswered = userAnswers[idx] !== undefined;
+        const isCurrent = currentQIndex === idx;
+        const btn = document.createElement('button');
+        btn.className = 'h-9 rounded-lg text-xs font-bold transition-all ' + 
+          (isCurrent ? 'ring-2 ring-[#0f2a5c] ' : '') + 
+          (isAnswered ? 'bg-[#f99d0d] text-white shadow-sm' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100');
+        btn.innerText = idx + 1;
+        btn.onclick = () => {
+          currentQIndex = idx;
+          renderCBTQuestion();
+          renderCBTGrid();
+        };
+        grid.appendChild(btn);
+      });
+      const answeredCount = Object.keys(userAnswers).length;
+      document.getElementById('cbt-progress').innerText = answeredCount + '/' + sampleQuestions.length + ' đã làm';
+    }
+
+    function cbtPrev() {
+      if (currentQIndex > 0) {
+        currentQIndex--;
+        renderCBTQuestion();
+        renderCBTGrid();
+      }
+    }
+
+    function cbtNext() {
+      if (currentQIndex < sampleQuestions.length - 1) {
+        currentQIndex++;
+        renderCBTQuestion();
+        renderCBTGrid();
+      }
+    }
+
+    function cbtSubmit() {
+      clearInterval(timerInterval);
+      let correct = 0;
+      sampleQuestions.forEach((q, idx) => {
+        if (userAnswers[idx] === q.ans) correct++;
+      });
+      
+      const score = Math.round((correct / sampleQuestions.length) * 1200);
+      document.getElementById('res-correct').innerText = correct + ' / ' + sampleQuestions.length;
+      document.getElementById('res-score').innerText = score + ' / 1200';
+      
+      document.getElementById('cbt-modal').classList.add('hidden');
+      document.getElementById('cbt-result-modal').classList.remove('hidden');
+    }
+
+    function closeCBTResult() {
+      document.getElementById('cbt-result-modal').classList.add('hidden');
+    }
+
+    // 18. ANTI-THEFT PROTECTION SCRIPT
+    (function antiTheft() {
+      const isModifierCombo = (e) => e.ctrlKey || e.metaKey;
+
+      document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || (isModifierCombo(e) && (e.key === 'u' || e.key === 'c' || e.key === 'p'))) {
+          e.preventDefault();
+          return false;
+        }
+        if (isModifierCombo(e) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+          e.preventDefault();
+          return false;
+        }
+      });
+      document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+    })();
+  </script>
+</body>
+</html>
